@@ -1,0 +1,506 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  color: #222;
+  line-height: 1.6;
+  padding-top: 70px;
+  /* same height as navbar */
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------- NAVBAR ---------------- */
+/* ---------- STICKY NAVBAR ---------- */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: red;
+  /* fully transparent at top */
+  color: #fff;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+/* when scrolling */
+nav.scrolled {
+  background: #fff;
+  color: #111;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+nav.scrolled a {
+  color: #111 !important;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  color: white;
+}
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.3));
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.primary {
+  background: #0ea5e9;
+  color: white;
+}
+
+.outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+/* ---------------- SECTIONS ---------------- */
+section {
+  padding: 100px 80px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+
+
+.card {
+  padding: 30px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* ---------- INTRO HERO SECTION ---------- */
+
+.intro-hero {
+  position: relative;
+  height: 85vh;
+  background: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  color: white;
+  overflow: hidden;
+  margin-top: -80px;
+}
+
+/* dark gradient overlay */
+.intro-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
+}
+
+/* content */
+.intro-content {
+  position: relative;
+  max-width: 650px;
+  z-index: 2;
+}
+
+.intro-content h2 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ffd600;
+  /* yellow */
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* paragraph box */
+.intro-text {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 18px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+/* button */
+.intro-btn {
+  background: #ffd600;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.intro-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* responsive */
+@media(max-width: 900px) {
+  .intro-hero {
+    padding: 0 30px;
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .intro-content h2 {
+    font-size: 32px;
+  }
+}
+
+/* ---------------- STATS ---------------- */
+.stats {
+  background: #f5f7fa;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.stats h2 {
+  font-size: 40px;
+  color: #0ea5e9;
+}
+
+/* ---------------- CTA ---------------- */
+.cta {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 80px;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+  background: #d61f1f;
+  /* same red tone */
+  color: white;
+  padding: 80px 60px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+
+.footer-col h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer-col p {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* input */
+.footer-col input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+/* button */
+.footer-btn {
+  background: #4aa3ff;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.footer-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.copyright {
+  margin-top: 30px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* responsive */
+@media(max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width: 900px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+}
+
+/* ---------- SERVICES (Clearpaths STYLE) ---------- */
+
+.services {
+  background: #f8fafc;
+  /* light gray, not red */
+  padding: 120px 80px;
+}
+
+.services-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 80px;
+}
+
+.services-header h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.services-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+/* row layout */
+.service-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+/* card */
+.service-item {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+  transition: 0.35s;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* image */
+.service-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+/* text */
+.service-item h3 {
+  padding: 24px 24px 8px;
+  font-size: 20px;
+}
+
+.service-item p {
+  padding: 0 24px 28px;
+  color: #666;
+  font-size: 15px;
+}
+
+.contact-info-section {
+  background: #fff;
+  color: #222;
+  padding: 60px 40px 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto 0 auto;
+  align-items: flex-start;
+}
+
+.contact-info-details {
+  font-size: 15px;
+}
+
+.contact-info-details h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.contact-info-details p {
+  margin-bottom: 18px;
+  color: #444;
+  font-size: 15px;
+}
+
+.contact-info-details b,
+.contact-info-details strong {
+  font-weight: 700;
+}
+
+.contact-info-details .contact-label {
+  font-weight: 700;
+  margin-top: 18px;
+  margin-bottom: 4px;
+  display: block;
+  font-size: 15px;
+}
+
+.contact-info-details .contact-location {
+  font-weight: 700;
+  margin-top: 18px;
+  margin-bottom: 2px;
+  display: block;
+  font-size: 15px;
+}
+
+.contact-info-details .contact-phone {
+  font-weight: 700;
+  margin-bottom: 18px;
+  display: block;
+  font-size: 15px;
+}
+
+.contact-info-maps {
+  display: flex;
+  gap: 18px;
+  justify-content: flex-end;
+}
+
+.contact-info-maps iframe {
+  border: 0;
+  border-radius: 8px;
+  width: 340px;
+  height: 320px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+@media(max-width: 1100px) {
+  .contact-info-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-info-maps {
+    justify-content: flex-start;
+  }
+}
+
+@media(max-width: 700px) {
+  .contact-info-section {
+    padding: 40px 10px 0 10px;
+  }
+
+  .contact-info-maps {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-info-maps iframe {
+    width: 100%;
+    height: 220px;
+  }
+}

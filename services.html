@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Clearpaths Canada</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <script defer src="scripts.js"></script>
+  <style>
+    /* --- SERVICES PAGE SECTIONS --- */
+    .services-section-red {
+      background: #d61f1f;
+      color: white;
+      padding: 80px 40px 40px 40px;
+    }
+    .services-section-red h1 {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .services-section-red h2 {
+      text-align: center;
+      color: #ffd600;
+      font-size: 20px;
+      margin-bottom: 60px;
+      font-weight: 600;
+    }
+    .services-red-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .services-red-content img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.13);
+    }
+    .services-red-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .services-red-list h3 {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .services-red-list .highlight {
+      color: #4aa3ff;
+    }
+    .services-red-list p {
+      color: #fff;
+      font-size: 16px;
+      opacity: 0.95;
+      margin-bottom: 0;
+    }
+
+    .services-section-white {
+      background: #fff;
+      color: #222;
+      padding-bottom: 40px;
+    }
+    .services-section-white h1 {
+      text-align: center;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .services-section-white h2 {
+      text-align: center;
+      color: #555;
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 60px;
+    }
+    .services-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+    .service-card {
+      background: #f8fafc;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    }
+    .service-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 24px 24px 0 0;
+    }
+    .service-card-content {
+      padding: 32px;
+    }
+    .service-card-content h3 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .service-card-content p {
+      color: #444;
+      font-size: 16px;
+    }
+
+    .client-feedback-section {
+      background: #fff;
+      color: #222;
+      padding: 40px 0 100px 0;
+    }
+    .client-feedback-section h1 {
+      text-align: center;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .client-feedback-section h2 {
+      text-align: center;
+      color: #555;
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 60px;
+    }
+    .feedback-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .feedback-card {
+      background: #d6eaf8;
+      border-radius: 18px;
+      padding: 40px 32px;
+    }
+    .feedback-stars {
+      font-size: 22px;
+      color: #222;
+      margin-bottom: 18px;
+    }
+    .feedback-text {
+      font-size: 17px;
+      color: #222;
+      margin-bottom: 30px;
+    }
+    .feedback-user {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .feedback-user img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .feedback-user-name {
+      font-weight: 700;
+    }
+    .feedback-user-location {
+      font-size: 14px;
+      color: #444;
+    }
+
+    @media(max-width: 900px) {
+      .services-red-content,
+      .services-cards,
+      .feedback-cards {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .services-section-red h1,
+      .services-section-white h1,
+      .client-feedback-section h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h2>Clearpaths</h2>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+  <!-- RED MARKETING AGENCY SERVICES SECTION -->
+  <section class="services-section-red">
+    <h1>Marketing Agency Services</h1>
+    <h2>Expert marketing solutions for humanitarian and medical organizations to<br>enhance brand visibility.</h2>
+    <div class="services-red-content">
+      <div>
+        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a" alt="Market scene" />
+      </div>
+      <div class="services-red-list">
+        <div>
+          <h3>Client Relationship Management</h3>
+          <p>Nurturing long-standing relationships to ensure sustained success and collaboration with clients.</p>
+        </div>
+        <div>
+          <h3>Face-to-Face Marketing</h3>
+          <p>Engaging strategies to connect directly with your audience and build relationships.</p>
+        </div>
+        <div>
+          <h3 class="highlight">Brand Awareness Campaigns</h3>
+          <p>Tailored campaigns to elevate your brand's presence in the humanitarian and medical sectors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKETING SOLUTIONS SECTION -->
+  <section class="services-section-white">
+    <h1>Marketing Solutions</h1>
+    <h2>Expert strategies for brand awareness and impactful campaigns.</h2>
+    <div class="services-cards">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Face to Face" />
+        <div class="service-card-content">
+          <h3>Face to Face</h3>
+          <p>Engaging marketing for humanitarian and medical organizations, building trust and lasting relationships.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca" alt="Brand Awareness" />
+        <div class="service-card-content">
+          <h3>Brand Awareness</h3>
+          <p>Building strong identities for lasting client impact and recognition in the humanitarian sector.</p>
+        </div>
+      </div>
+    </div>
+    <div class="services-cards">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429" alt="Campaign Strategies" />
+        <div class="service-card-content">
+          <h3>Campaign Strategies</h3>
+          <p>Tailored campaigns for effective audience engagement and outreach.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302b" alt="Client Portfolio" />
+        <div class="service-card-content">
+          <h3>Client Portfolio</h3>
+          <p>Diverse clients with strong, long-standing industry relationships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT FEEDBACK SECTION -->
+  <section class="client-feedback-section">
+    <h1>Client Feedback</h1>
+    <h2>Hear what our clients say about our marketing services and expertise.</h2>
+    <div class="feedback-cards">
+      <div class="feedback-card">
+        <div class="feedback-stars">★★★★★</div>
+        <p class="feedback-text">Working with Clearpaths Canada has been a game changer for our organization. Their team's dedication and experience truly shine through in every campaign they execute.</p>
+        <div class="feedback-user">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Lee" />
+          <div>
+            <div class="feedback-user-name">Michael Lee</div>
+            <div class="feedback-user-location">Toronto</div>
+          </div>
+        </div>
+      </div>
+      <div class="feedback-card">
+        <div class="feedback-stars">★★★★★</div>
+        <p class="feedback-text">Clearpaths Canada transformed our marketing approach, delivering exceptional results for our hospital campaigns. Their expertise is unmatched in the humanitarian sector.</p>
+        <div class="feedback-user">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" />
+          <div>
+            <div class="feedback-user-name">Sarah Johnson</div>
+            <div class="feedback-user-location">Mississauga</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Connect</h3>
+        <p>Expert marketing for humanitarian and medical sectors.</p>
+        <p>Contact@ClearpathsCanada.com</p>
+        <p>Recruitment@ClearpathsCanada.com</p>
+        <p class="copyright">© 2025. All rights reserved.</p>
+      </div>
+      <div class="footer-col">
+        <h3>SERVICES</h3>
+        <p>
+          110 Matheson Blvd West, Unit 190<br>
+          Mississauga, ON, L5R 4G7<br>
+          <b>+1 (289) 277-8693</b>
+        </p>
+        <br>
+        <p>
+          15350 Croydon Dr. #201<br>
+          Surrey, BC V3Z-1H4<br>
+          (Office Room #12)<br>
+          <b>+1 (604) 265-8122</b>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3>ABOUT</h3>
+        <p>Enter your email address</p>
+        <input type="email" placeholder="Your email for contact" />
+        <button class="footer-btn">Submit your information now</button>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

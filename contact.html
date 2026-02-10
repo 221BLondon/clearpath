@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Clearpaths Canada</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <script defer src="scripts.js"></script>
+
+
+  <style>
+    /* ---------------- CONTACT SECTION ---------------- */
+
+    .contact-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .contact-left h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .contact-left p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .contact-left img {
+      width: 100%;
+      border-radius: 18px;
+      margin-top: 40px;
+    }
+
+    /* ---------------- FORM ---------------- */
+
+    .contact-form {
+      background: white;
+      padding: 40px;
+      border-radius: 18px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .contact-form label {
+      font-size: 14px;
+      margin-bottom: 8px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 22px;
+      border-radius: 10px;
+      border: 1px solid #dcdcdc;
+      font-size: 14px;
+    }
+
+    .contact-form textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    .submit-btn {
+      background: #4a86d9;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 28px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+
+    /* ---------------- MOBILE ---------------- */
+
+    @media(max-width: 900px) {
+      .contact-section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <nav>
+    <h2>Clearpaths</h2>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTACT CONTENT -->
+  <section class="contact-section">
+
+    <div class="contact-left">
+      <h1>Get In Touch</h1>
+      <p>
+        Contact Clearpaths Canada for marketing solutions in humanitarian and medical sectors.
+        We're here to help!
+      </p>
+
+      <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a" />
+    </div>
+
+
+    <form class="contact-form">
+      <label>Your First Name</label>
+      <input type="text" placeholder="Enter your first name">
+
+      <label>Your Email Address*</label>
+      <input type="email" placeholder="Enter your email address">
+
+      <label>Your Message*</label>
+      <textarea placeholder="Type your message here"></textarea>
+
+      <button class="submit-btn">Submit Your Inquiry</button>
+    </form>
+
+  </section>
+  <!-- CONTACT INFO & MAPS SECTION -->
+  <section class="contact-info-section">
+    <div class="contact-info-details">
+      <h1>Contact Us</h1>
+      <p>Visit our Mississauga (ON) or Surrey (BC) office for personalized marketing solutions and to discuss your brand's needs with our experienced team.</p>
+      <b>E-mail</b><br>
+      Contact@BrightBridgeCanada.com<br>
+      Recruitment@BrightBridgeCanada.com<br><br>
+      <b>Ontario</b><br>
+      110 Matheson Blvd West, Unit 190<br>
+      Mississauga, ON, L5R 4G7<br>
+      <b>+1 (289) 277-8693</b><br><br>
+      <b>British Colombia</b><br>
+      15350 Croydon Dr. #201<br>
+      Surrey, BC V3Z-1H4<br>
+      (Office Room #12)<br>
+      <b>+1 (604) 265-8122</b><br><br>
+      <b>Hours</b><br>
+      10 AM - 4 PM
+    </div>
+    <div class="contact-info-maps">
+      <iframe
+        src="https://www.google.com/maps?q=110+Matheson+Blvd+West,+Unit+190,+Mississauga,+ON,+L5R+4G7&output=embed"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Mississauga Office"></iframe>
+      <iframe src="https://www.google.com/maps?q=15350+Croydon+Dr.+%23201,+Surrey,+BC+V3Z-1H4&output=embed"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Surrey Office"></iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h3>Connect</h3>
+        <p>Expert marketing for humanitarian and medical sectors.</p>
+
+        <p>Contact@ClearpathsCanada.com</p>
+        <p>Recruitment@ClearpathsCanada.com</p>
+
+        <p class="copyright">© 2025. All rights reserved.</p>
+      </div>
+
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h3>SERVICES</h3>
+
+        <p>
+          110 Matheson Blvd West, Unit 190<br>
+          Mississauga, ON, L5R 4G7<br>
+          <b>+1 (289) 277-8693</b>
+        </p>
+
+        <br>
+
+        <p>
+          15350 Croydon Dr. #201<br>
+          Surrey, BC V3Z-1H4<br>
+          (Office Room #12)<br>
+          <b>+1 (604) 265-8122</b>
+        </p>
+      </div>
+
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h3>ABOUT</h3>
+
+        <p>Enter your email address</p>
+
+        <input type="email" placeholder="Your email for contact" />
+
+        <button class="footer-btn">
+          Submit your information now
+        </button>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
