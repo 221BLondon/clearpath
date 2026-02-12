@@ -1,0 +1,183 @@
+{
+  "hero": {
+    "id": "hero-section",
+    "title": "Expert Marketing Solutions for Humanitarian Organizations",
+    "titleId": "hero-title",
+    "description": "We create impactful marketing campaigns that build trust and lasting relationships.",
+    "descriptionId": "hero-description",
+    "primaryBtnText": "Get Started",
+    "primaryBtnId": "hero-btn-primary",
+    "secondaryBtnText": "Learn More",
+    "secondaryBtnId": "hero-btn-secondary"
+  },
+  "intro": {
+    "id": "intro-section",
+    "title": "Your Trusted Marketing Agency in Ontario & British Colombia",
+    "titleId": "intro-title",
+    "description": "We are a dedicated marketing agency specializing in face-to-face marketing and brand awareness for humanitarian organizations, charities, and the medical community, backed by over 25 years of collective experience.",
+    "descriptionId": "intro-description",
+    "btnText": "Contact",
+    "btnId": "intro-btn"
+  },
+  "about": {
+    "id": "about-section",
+    "title": "About Us",
+    "titleId": "about-title",
+    "description": "We are a results-driven agency helping brands grow with innovative marketing strategies and meaningful customer engagement.",
+    "descriptionId": "about-description",
+    "imageUrl": "https://picsum.photos/600/400",
+    "imageId": "about-image",
+    "pageTitle": "About Clearpaths",
+    "pageTitleId": "about-page-title",
+    "pageDescription": "Clearpaths is a results-driven marketing agency specializing in face-to-face marketing and brand awareness for humanitarian organizations, charities, and the medical community. With over 25 years of collective experience, our team is dedicated to helping brands grow through innovative strategies and meaningful customer engagement.",
+    "pageDescriptionId": "about-page-description",
+    "missionTitle": "Our Mission",
+    "missionTitleId": "mission-title",
+    "missionText": "To connect brands with people by creating impactful marketing campaigns that build trust and lasting relationships. We believe in the power of authentic engagement and strive to make a positive difference in the humanitarian and medical sectors.",
+    "missionTextId": "mission-text",
+    "whyTitle": "Why Choose Us?",
+    "whyTitleId": "why-title",
+    "whyPoints": [
+      { "id": "why-1", "text": "Specialized in humanitarian and medical marketing" },
+      { "id": "why-2", "text": "Experienced, passionate team" },
+      { "id": "why-3", "text": "Proven track record of successful campaigns" },
+      { "id": "why-4", "text": "Personalized, client-focused approach" }
+    ],
+    "pageImageUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+    "pageImageId": "about-page-image"
+  },
+  "services": {
+    "id": "services-section",
+    "title": "Our Services",
+    "titleId": "services-title",
+    "description": "Expert marketing solutions for humanitarian organizations and the medical community, enhancing brand visibility and engagement.",
+    "descriptionId": "services-description",
+    "items": [
+      {
+        "id": "service-item-1",
+        "title": "Face-to-Face Marketing",
+        "titleId": "service-1-title",
+        "description": "Engaging strategies that connect brands directly with audiences, fostering meaningful interactions and relationships.",
+        "descriptionId": "service-1-description",
+        "imageUrl": "https://picsum.photos/600/400?1",
+        "imageId": "service-1-image"
+      },
+      {
+        "id": "service-item-2",
+        "title": "Brand Awareness",
+        "titleId": "service-2-title",
+        "description": "Strategic campaigns designed to increase brand visibility and recognition among your target audience.",
+        "descriptionId": "service-2-description",
+        "imageUrl": "https://picsum.photos/600/400?2",
+        "imageId": "service-2-image"
+      },
+      {
+        "id": "service-item-3",
+        "title": "Community Engagement",
+        "titleId": "service-3-title",
+        "description": "Building meaningful connections with your community through authentic and impactful marketing initiatives.",
+        "descriptionId": "service-3-description",
+        "imageUrl": "https://picsum.photos/600/400?3",
+        "imageId": "service-3-image"
+      }
+    ]
+  },
+  "careers": {
+    "id": "careers-section",
+    "title": "Careers at Clearpaths",
+    "titleId": "careers-title",
+    "description": "Join our passionate team and help make a difference in the humanitarian and medical marketing sectors. Explore our current openings or reach out to us directly!",
+    "descriptionId": "careers-description",
+    "openingsContainerId": "openings-list",
+    "openings": [
+      {
+        "id": "opening-1",
+        "title": "wMarketing Coordinator",
+        "titleId": "opening-1-title",
+        "description": "Coordinate and support marketing campaigns, events, and outreach for our clients. Experience in the humanitarian or medical sector is a plus.",
+        "descriptionId": "opening-1-desc",
+        "applyEmail": "recruitment@clearpaths.com",
+        "applySubject": "Application for Marketing Coordinator"
+      },
+      {
+        "id": "opening-2",
+        "title": "Field Representative",
+        "titleId": "opening-2-title",
+        "description": "Engage directly with communities and represent our clients in face-to-face marketing initiatives. Strong communication skills required.",
+        "descriptionId": "opening-2-desc",
+        "applyEmail": "recruitment@clearpaths.com",
+        "applySubject": "Application for Field Representative"
+      }
+    ]
+  },
+  "contact": {
+    "id": "contact-section",
+    "leftTitle": "Get In Touch",
+    "leftTitleId": "contact-left-title",
+    "leftDescription": "Contact Clearpaths for marketing solutions in humanitarian and medical sectors. We're here to help!",
+    "leftDescriptionId": "contact-left-description",
+    "leftImageUrl": "https://images.unsplash.com/photo-1559027615-cd4628902d4a",
+    "leftImageId": "contact-left-image",
+    "formFields": [
+      { "id": "form-firstname", "label": "Your First Name", "type": "text", "placeholder": "Enter your first name" },
+      { "id": "form-email", "label": "Your Email Address*", "type": "email", "placeholder": "Enter your email address" },
+      { "id": "form-message", "label": "Your Message*", "type": "textarea", "placeholder": "Type your message here" }
+    ]
+  },
+  "faq": {
+    "id": "faq-section",
+    "title": "Frequently Asked Questions",
+    "titleId": "faq-title",
+    "listContainerId": "faq-list",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "What services does Clearpaths offer?",
+        "questionId": "faq-1-q",
+        "answer": "We provide marketing solutions for humanitarian and medical sectors, including face-to-face marketing, brand awareness campaigns, and client relationship management.",
+        "answerId": "faq-1-a"
+      },
+      {
+        "id": "faq-2",
+        "question": "How can I contact your team?",
+        "questionId": "faq-2-q",
+        "answer": "You can reach us via the contact form on our Contact page, or email us at Contact@Clearpaths.com or Recruitment@Clearpaths.com.",
+        "answerId": "faq-2-a"
+      },
+      {
+        "id": "faq-3",
+        "question": "Where are your offices located?",
+        "questionId": "faq-3-q",
+        "answer": "We have offices in Mississauga, Ontario and Surrey, British Columbia. See our Contact page for addresses and maps.",
+        "answerId": "faq-3-a"
+      },
+      {
+        "id": "faq-4",
+        "question": "What are your business hours?",
+        "questionId": "faq-4-q",
+        "answer": "Our offices are open from 10 AM to 4 PM, Monday to Friday.",
+        "answerId": "faq-4-a"
+      },
+      {
+        "id": "faq-5",
+        "question": "Do you work with organizations outside Canada?",
+        "questionId": "faq-5-q",
+        "answer": "Yes, we are open to collaborating with international organizations. Please contact us to discuss your needs.",
+        "answerId": "faq-5-a"
+      }
+    ]
+  },
+  "footer": {
+    "col1Title": "Connect",
+    "col1Desc": "Expert marketing for humanitarian and medical sectors.",
+    "col1Email1": "Contact@Clearpaths.com",
+    "col1Email2": "Recruitment@Clearpaths.com",
+    "col1Copyright": "© 2025. All rights reserved.",
+    "col2Title": "SERVICES",
+    "col2Location1": "110 Matheson Blvd West, Unit 190<br>Mississauga, ON, L5R 4G7<br><b>+1 (289) 277-8693</b>",
+    "col2Location2": "15350 Croydon Dr. #201<br>Surrey, BC V3Z-1H4<br>(Office Room #12)<br><b>+1 (604) 265-8122</b>",
+    "col3Title": "ABOUT",
+    "col3Desc": "Enter your email address",
+    "col3BtnText": "Submit your information now"
+  }
+}

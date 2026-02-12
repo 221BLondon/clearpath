@@ -504,3 +504,104 @@ section {
     height: 220px;
   }
 }
+
+/* ---------- CAREERS PAGE ---------- */
+
+.careers-section {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  padding: 60px 40px 60px 40px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.careers-section h1 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.careers-section p {
+  color: #444;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.openings-list {
+  margin: 40px 0 30px 0;
+}
+
+.opening {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.opening-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0ea5e9;
+  margin-bottom: 8px;
+}
+
+.opening-desc {
+  color: #444;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.opening-apply {
+  display: inline-block;
+  background: #4a86d9;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 28px;
+  text-decoration: none;
+  font-size: 15px;
+  margin-top: 8px;
+  transition: 0.2s;
+}
+
+.opening-apply:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.careers-reachout {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.careers-reachout a {
+  color: #0ea5e9;
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+@media(max-width: 700px) {
+  .careers-section {
+    padding: 30px 10px;
+  }
+  
+  .careers-section h1 {
+    font-size: 28px;
+  }
+  
+  .opening-title {
+    font-size: 17px;
+  }
+  
+  .opening-desc, .careers-section p {
+    font-size: 14px;
+  }
+}
