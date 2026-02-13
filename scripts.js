@@ -1,3 +1,101 @@
+/* ---------------- HAMBURGER MENU TOGGLE ---------------- */
+
+function initHamburgerMenu() {
+  // Prevent double-initialization
+  if (window.__hamburgerInitialized) {
+    console.log('initHamburgerMenu() skipped — already initialized');
+    return;
+  }
+  console.log('initHamburgerMenu() called');
+  
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+  const menuOverlay = document.getElementById('menu-overlay');
+
+  console.log('Elements found:', {
+    hamburger: !!hamburger,
+    navMenu: !!navMenu,
+    menuOverlay: !!menuOverlay
+  });
+
+  if (!hamburger || !navMenu || !menuOverlay) {
+    console.error('❌ ERROR: Missing required elements!');
+    console.error('hamburger:', hamburger);
+    console.error('navMenu:', navMenu);
+    console.error('menuOverlay:', menuOverlay);
+    return;
+  }
+
+  console.log('✓ All elements found');
+
+  function closeMenu() {
+    console.log('→ Closing menu');
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    menuOverlay.classList.remove('active');
+  }
+
+  function openMenu() {
+    console.log('→ Opening menu');
+    hamburger.classList.add('active');
+    navMenu.classList.add('active');
+    menuOverlay.classList.add('active');
+  }
+
+  // Hamburger button - toggle menu
+  hamburger.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('HAMBURGER CLICKED!');
+    
+    if (navMenu.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Close menu when clicking overlay
+  menuOverlay.addEventListener('click', function(e) {
+    console.log('OVERLAY CLICKED!');
+    e.stopPropagation();
+    closeMenu();
+  });
+
+  // Close menu when clicking nav links
+  const navLinks = navMenu.querySelectorAll('a');
+  console.log('Found ' + navLinks.length + ' nav links');
+  
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      console.log('NAV LINK CLICKED:', link.textContent);
+      e.stopPropagation();
+      closeMenu();
+    });
+  });
+
+  // Prevent menu clicks from closing menu
+  navMenu.addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
+
+  console.log('✓ All event listeners attached');
+  // mark initialized
+  window.__hamburgerInitialized = true;
+}
+
+// Try to initialize immediately
+if (document.readyState === 'loading') {
+  console.log('DOM still loading, waiting for DOMContentLoaded');
+  document.addEventListener('DOMContentLoaded', initHamburgerMenu);
+} else {
+  console.log('DOM already loaded, initializing immediately');
+  initHamburgerMenu();
+}
+
+// No window.load re-init — guarded by DOMContentLoaded/init checks above
+
+
 /* ---------------- LOAD CONTENT FROM JSON ---------------- */
 
 let contentData = {};
