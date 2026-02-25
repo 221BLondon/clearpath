@@ -113,6 +113,11 @@ async function loadContent() {
     console.log('Calling populateContent...');
     populateContent();
     console.log('populateContent completed');
+    
+    // Initialize premium services section after content is loaded
+    setTimeout(() => {
+      initPremiumServicesSection();
+    }, 100);
   } catch (error) {
     console.error('ERROR in loadContent():', error);
     console.error('Error message:', error.message);
@@ -181,35 +186,38 @@ function populateContent() {
   if (contentData.services) {
     const servicesTitle = document.getElementById(contentData.services.titleId);
     const servicesDesc = document.getElementById(contentData.services.descriptionId);
-    const serviceRow = document.getElementById('service-row');
+    const servicesContainer = document.getElementById('services-container');
     
-    console.log('Service row element:', serviceRow);
+    console.log('Services container element:', servicesContainer);
     console.log('Service items to loop:', contentData.services.items);
     
     if (servicesTitle) servicesTitle.textContent = contentData.services.title;
     if (servicesDesc) servicesDesc.textContent = contentData.services.description;
 
     // Generate Service Items from JSON
-    if (serviceRow && contentData.services.items) {
-      console.log('Condition met: serviceRow exists and items exist');
-      console.log('Number of items to add:', contentData.services.items.length);
-      console.log('serviceRow HTML before clear:', serviceRow.innerHTML);
-      serviceRow.innerHTML = ''; // Clear existing items
-      console.log('serviceRow HTML after clear:', serviceRow.innerHTML);
+    if (servicesContainer && contentData.services.items) {
+      console.log('Generating services from JSON, count:', contentData.services.items.length);
+      servicesContainer.innerHTML = ''; // Clear existing items
       
       contentData.services.items.forEach((item, index) => {
         console.log('Processing service item', index + 1, ':', item.title);
-        const serviceHTML = `<div class="service-item"><img src="${item.imageUrl}" alt="${item.title}" /><h3>${item.title}</h3><p>${item.description}</p></div>`;
-        serviceRow.insertAdjacentHTML('beforeend', serviceHTML);
-        console.log('Item', index + 1, 'inserted. Current children count:', serviceRow.children.length);
+        const serviceHTML = `
+          <div class="service-slide">
+            <div class="service-image-container">
+              <img src="${item.imageUrl}" alt="${item.title}" />
+            </div>
+            <div class="service-content">
+              <h2>${item.title}</h2>
+              <p>${item.description}</p>
+              <a href="#" class="service-btn">Learn More</a>
+            </div>
+          </div>
+        `;
+        servicesContainer.insertAdjacentHTML('beforeend', serviceHTML);
       });
-      console.log('All service items processed. Total children in serviceRow:', serviceRow.children.length);
-      console.log('Final HTML length:', serviceRow.innerHTML.length);
-      console.log('Final HTML:', serviceRow.innerHTML.substring(0, 200));
+      console.log('All service items loaded. Total:', contentData.services.items.length);
     } else {
-      console.log('Condition FAILED');
-      console.log('  serviceRow:', serviceRow, '(exists:', !!serviceRow, ')');
-      console.log('  contentData.services.items:', contentData.services.items, '(exists:', !!contentData.services.items, ')');
+      console.log('Services container or items not found');
     }
   }
 
@@ -342,3 +350,212 @@ const observer = new IntersectionObserver(entries => {
 });
 
 faders.forEach(el => observer.observe(el));
+
+
+/* ---------------- SERVICES SCROLL EFFECT ---------------- */
+
+function initServicesScroll() {
+  const slides = document.querySelectorAll('.service-slide');
+  const dotsContainer = document.getElementById('service-dots');
+  const container = document.querySelector('.services-scroll-container');
+  
+  if (slides.length === 0) return;
+
+  // Create dots
+  slides.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (index === 0 ? ' active' : '');
+    dot.addEventListener('click', () => showSlide(index));
+    dotsContainer.appendChild(dot);
+  });
+
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+
+    slides[index].classList.add('active');
+    document.querySelectorAll('.dot')[index].classList.add('active');
+    currentIndex = index;
+  }
+
+  // Show first slide
+  showSlide(0);
+
+  // Scroll through slides on scroll
+  let scrollTimeout;
+  let lastScrollTime = 0;
+
+  const handleScroll = () => {
+    const now = Date.now();
+    if (now - lastScrollTime < 800) return; // Debounce
+    lastScrollTime = now;
+
+    const section = container.closest('.services-scroll-section');
+    const rect = section.getBoundingClientRect();
+    const sectionCenter = window.innerHeight / 2;
+
+    if (rect.top < sectionCenter && rect.bottom > sectionCenter) {
+      // Section is in view, enable scroll-based navigation
+      const scrollDirection = event.deltaY > 0 ? 'down' : 'up';
+      
+      if (scrollDirection === 'down') {
+        if (currentIndex < slides.length - 1) {
+          showSlide(currentIndex + 1);
+        }
+      } else {
+        if (currentIndex > 0) {
+          showSlide(currentIndex - 1);
+        }
+      }
+    }
+  };
+
+  window.addEventListener('wheel', handleScroll, { passive: true });
+
+  // Also allow keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' && currentIndex < slides.length - 1) {
+      showSlide(currentIndex + 1);
+    } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+      showSlide(currentIndex - 1);
+    }
+  });
+}
+
+// Initialize services scroll on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  initServicesScroll();
+  initTestimonialsCarousel();
+});
+
+
+/* ---------------- TESTIMONIALS CAROUSEL ---------- */
+
+function initTestimonialsCarousel() {
+  const carousel = document.getElementById('testimonials-carousel');
+  const cards = document.querySelectorAll('.testimonial-card');
+  const prevBtn = document.getElementById('testimonials-prev');
+  const nextBtn = document.getElementById('testimonials-next');
+  const arrows = document.querySelectorAll('.testimonial-arrow');
+
+  console.log('initTestimonialsCarousel called');
+  console.log('Found ' + cards.length + ' testimonial cards');
+  console.log('Found ' + arrows.length + ' arrows');
+
+  if (cards.length === 0) return;
+
+  let currentIndex = Math.floor(cards.length / 2); // Start with middle card
+  console.log('Starting at index:', currentIndex);
+
+  function updateCarousel() {
+    console.log('updateCarousel called, currentIndex:', currentIndex);
+    cards.forEach((card, index) => {
+      card.classList.remove('active');
+      if (index === currentIndex) {
+        card.classList.add('active');
+        console.log('Added active class to card', index);
+      }
+    });
+  }
+
+  function nextCard() {
+    currentIndex = (currentIndex + 1) % cards.length;
+    console.log('nextCard() - new index:', currentIndex);
+    updateCarousel();
+  }
+
+  function prevCard() {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    console.log('prevCard() - new index:', currentIndex);
+    updateCarousel();
+  }
+
+  // Event listeners - Navigation buttons
+  nextBtn.addEventListener('click', () => {
+    console.log('Next button clicked');
+    nextCard();
+  });
+  prevBtn.addEventListener('click', () => {
+    console.log('Prev button clicked');
+    prevCard();
+  });
+
+  // Event listeners - Arrow icons (click to go to next)
+  arrows.forEach((arrow, index) => {
+    arrow.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Arrow ' + index + ' clicked');
+      nextCard();
+    });
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextCard();
+    if (e.key === 'ArrowLeft') prevCard();
+  });
+
+  // Initialize
+  updateCarousel();
+}
+
+// Initialize Premium Services Section
+function initPremiumServicesSection() {
+  console.log('initPremiumServicesSection called');
+  
+  const wrapper = document.getElementById('services-premium-wrapper');
+  const track = document.getElementById('services-premium-track');
+  const titleElement = document.getElementById('services-premium-title');
+  const descriptionElement = document.getElementById('services-premium-description');
+
+  if (!wrapper || !track || !titleElement || !descriptionElement || !contentData.services) {
+    console.log('Missing required elements or data');
+    return;
+  }
+
+  const services = contentData.services.items;
+  if (services.length === 0) return;
+
+  console.log('Loading', services.length, 'services into premium section');
+
+  // Create image items
+  services.forEach((service) => {
+    const imageItem = document.createElement('div');
+    imageItem.className = 'services-premium-image-item';
+    imageItem.innerHTML = `<img src="${service.imageUrl}" alt="${service.title}" />`;
+    track.appendChild(imageItem);
+  });
+
+  // Constants
+  const total = services.length;
+  const gap = 80; // Must match CSS margin-bottom
+  const viewport = window.innerHeight;
+
+  // Calculate dynamic wrapper height
+  wrapper.style.height = (total * viewport + (total - 1) * gap) + 'px';
+
+  // Scroll handler
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const wrapperTop = wrapper.offsetTop;
+    let progress = scrollY - wrapperTop;
+
+    if (progress >= 0 && progress <= wrapper.offsetHeight - viewport) {
+      // Move images naturally with gap included
+      track.style.transform = `translateY(-${progress}px)`;
+
+      // Detect current index
+      let index = Math.floor(progress / (viewport + gap));
+      if (index >= total) index = total - 1;
+
+      titleElement.textContent = services[index].title;
+      descriptionElement.textContent = services[index].description;
+    }
+  });
+
+  console.log('Premium services section initialized');
+}
+

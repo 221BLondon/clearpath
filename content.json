@@ -79,6 +79,15 @@
         "descriptionId": "service-3-description",
         "imageUrl": "https://picsum.photos/600/400?3",
         "imageId": "service-3-image"
+      },
+      {
+        "id": "service-item-4",
+        "title": "Digital Marketing",
+        "titleId": "service-4-title",
+        "description": "Comprehensive digital solutions including social media, content marketing, and online advertising to expand your reach.",
+        "descriptionId": "service-4-description",
+        "imageUrl": "https://picsum.photos/600/400?4",
+        "imageId": "service-4-image"
       }
     ]
   },

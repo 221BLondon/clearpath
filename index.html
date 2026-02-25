@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Clearpaths Canad</title>
+  <title>Home | Clearpaths Canada</title>
   <link rel="stylesheet" href="styles.css">
 
   <!-- Google Font -->
@@ -24,18 +24,16 @@
       <span></span>
     </button>
     <ul id="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="careers.html">Careers</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
   <div class="menu-overlay" id="menu-overlay"></div>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="home">
     <video autoplay muted loop>
       <!-- replace with your video/gif -->
       <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
@@ -50,62 +48,6 @@
       <button class="btn outline" id="hero-btn-secondary">Learn More</button>
     </div>
   </section>
-  <!-- TRUST / INTRO SECTION -->
-  <section class="intro-hero">
-
-    <div class="intro-overlay"></div>
-
-    <div class="intro-content">
-      <h2 id="intro-title">
-        Your Trusted Marketing<br>
-        Agency in <strong>Ontario &<br>British Columbia</strong>
-      </h2>
-
-      <div class="intro-text" id="intro-description">
-        We are a dedicated marketing agency specializing in face-to-face marketing and brand awareness for humanitarian organizations, charities, and the medical community, backed by over 25 years of collective experience.
-      </div>
-
-      <button class="intro-btn" id="intro-btn"><span>Contact</span></button>
-    </div>
-
-  </section>
-
-  <!-- ABOUT -->
-  <section class="two-col fade">
-    <div>
-      <h2 id="about-title">About Us</h2>
-      <p id="about-description">We are a results-driven agency helping brands grow with innovative marketing strategies
-        and meaningful customer engagement.</p>
-    </div>
-    <img id="about-image" src="https://picsum.photos/600/400" style="width:100%; border-radius:14px;" />
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services">
-
-    <div class="services-header">
-      <h2 id="services-title">Our Services</h2>
-      <p id="services-description">
-        Expert marketing solutions for humanitarian organizations and the
-        medical community, enhancing brand visibility and engagement.
-      </p>
-    </div>
-
-    <div class="service-row" id="service-row">
-
-      <div class="service-item">
-        <img src="https://picsum.photos/600/400?1" />
-        <h3>Face-to-Face Marketing</h3>
-        <p>
-          Engaging strategies that connect brands directly with audiences,
-          fostering meaningful interactions and relationships.
-        </p>
-      </div>
-    </div>
-  </section>
-
-
-
   <!-- STATS -->
   <section class="stats fade">
     <div>
@@ -122,12 +64,347 @@
     </div>
   </section>
 
+  <!-- INTRO & ABOUT COMBINED SECTION -->
+  <section class="intro-about-section" id="about">
+    <div class="intro-about-content">
+      <div class="intro-about-text">
+        <h2 id="intro-title">
+          Your Trusted Marketing<br>
+          Agency in <strong>Ontario &<br>British Columbia</strong>
+        </h2>
+
+        <p id="intro-description">
+          We are a dedicated marketing agency specializing in face-to-face marketing and brand awareness for humanitarian organizations, charities, and the medical community, backed by over 25 years of collective experience.
+        </p>
+
+        <div class="about-box">
+          <h3 id="about-title">About Us</h3>
+          <p id="about-description">We are a results-driven agency helping brands grow with innovative marketing strategies and meaningful customer engagement.</p>
+        </div>
+
+        <button class="intro-btn" id="intro-btn"><span>Contact</span></button>
+      </div>
+
+      <div class="intro-about-image">
+        <img id="about-image" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=800&fit=crop" alt="About Clearpaths" />
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="services-scroll-section" id="services">
+    <div class="services-scroll-container" id="services-container">
+     
+    </div>
+
+    <div class="service-dots" id="service-dots"></div>
+  </section> -->
+
+
+
+
+  <!-- PREMIUM SERVICES SCROLL SECTION -->
+  <div class="services-premium-wrapper" id="services-premium-wrapper">
+    <div class="services-premium-section">
+      <!-- Left: Service Title & Description -->
+      <div class="services-premium-text">
+        <h2 class="services-premium-title" id="services-premium-title">
+          Face-to-Face Marketing
+        </h2>
+        <p class="services-premium-description" id="services-premium-description">Engaging strategies that connect brands directly with audiences, fostering meaningful interactions and relationships.</p>
+      </div>
+
+      <!-- Right: Image Stack Container -->
+      <div class="services-premium-images">
+        <div class="services-premium-track" id="services-premium-track">
+          <!-- Images will be loaded from JSON here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="testimonials-header">
+      <h2>Client Testimonials</h2>
+      <p>Hear what our clients have to say about working with Clearpaths</p>
+    </div>
+    
+    <div class="testimonials-container">
+      <div class="testimonials-carousel" id="testimonials-carousel">
+        
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card" style="--bg-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=500&fit=crop');">
+          <div class="testimonial-image">
+            <div class="testimonial-arrow">↗</div>
+          </div>
+          <div class="testimonial-overlay">
+            <div class="testimonial-content">
+              <p class="testimonial-quote">"Clearpaths transformed our marketing strategy completely. Their face-to-face approach helped us connect with our donor base in ways we never thought possible."</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+              <div>
+                <p class="testimonial-role">Marketing Director</p>
+                <p class="testimonial-company">Hope International</p>
+              </div>
+              <div class="testimonial-logo">
+                <img src="https://via.placeholder.com/90x45/cccccc/ffffff?text=Hope" alt="Hope International" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card" style="--bg-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=500&fit=crop');">
+          <div class="testimonial-image">
+            <div class="testimonial-arrow">↗</div>
+          </div>
+          <div class="testimonial-overlay">
+            <div class="testimonial-content">
+              <p class="testimonial-quote">"Working with Clearpaths was seamless from start to finish. They quickly understood our needs and delivered a solution that exceeded expectations."</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+              <div>
+                <p class="testimonial-role">Operations Travel Assistant</p>
+                <p class="testimonial-company">Burges Salmon</p>
+              </div>
+              <div class="testimonial-logo">
+                <img src="https://via.placeholder.com/90x45/cccccc/ffffff?text=Burges" alt="Burges Salmon" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card" style="--bg-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=500&fit=crop');">
+          <div class="testimonial-image">
+            <div class="testimonial-arrow">↗</div>
+          </div>
+          <div class="testimonial-overlay">
+            <div class="testimonial-content">
+              <p class="testimonial-quote">"The team at Clearpaths brought such energy and expertise to our event. Their campaigns resulted in a 40% increase in brand awareness."</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+              <div>
+                <p class="testimonial-role">Event Manager</p>
+                <p class="testimonial-company">Medical Relief Foundation</p>
+              </div>
+              <div class="testimonial-logo">
+                <img src="https://via.placeholder.com/90x45/cccccc/ffffff?text=Medical" alt="Medical Relief Foundation" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="testimonial-card" style="--bg-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=500&fit=crop');">
+          <div class="testimonial-image">
+            <div class="testimonial-arrow">↗</div>
+          </div>
+          <div class="testimonial-overlay">
+            <div class="testimonial-content">
+              <p class="testimonial-quote">"Clearpaths doesn't just deliver campaigns, they deliver results. Their understanding of the humanitarian sector is unmatched."</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+              <div>
+                <p class="testimonial-role">Communications Lead</p>
+                <p class="testimonial-company">Global Health Alliance</p>
+              </div>
+              <div class="testimonial-logo">
+                <img src="https://via.placeholder.com/90x45/cccccc/ffffff?text=Global" alt="Global Health Alliance" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="testimonial-card" style="--bg-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=500&fit=crop');">
+          <div class="testimonial-image">
+            <div class="testimonial-arrow">↗</div>
+          </div>
+          <div class="testimonial-overlay">
+            <div class="testimonial-content">
+              <p class="testimonial-quote">"Professional, creative, and results-driven. Clearpaths is the best agency we've worked with in the non-profit space."</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+              <div>
+                <p class="testimonial-role">Executive Director</p>
+                <p class="testimonial-company">Community Care Initiative</p>
+              </div>
+              <div class="testimonial-logo">
+                <img src="https://via.placeholder.com/90x45/cccccc/ffffff?text=Community" alt="Community Care Initiative" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation Arrows -->
+      <div class="testimonials-nav">
+        <button class="nav-btn prev" id="testimonials-prev">←</button>
+        <button class="nav-btn next" id="testimonials-next">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS / TRUSTED BY SECTION -->
+  <section class="clients-section">
+    <h2>Proud to be trusted by:</h2>
+    <div class="clients-grid">
+      <div class="client-logo">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=80&fit=crop" alt="NHS" />
+      </div>
+      <div class="client-logo">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=80&fit=crop" alt="John Lewis" />
+      </div>
+      <div class="client-logo">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=80&fit=crop" alt="Helix Energy" />
+      </div>
+      <div class="client-logo">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=80&fit=crop" alt="DHL" />
+      </div>
+      <div class="client-logo">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=80&fit=crop" alt="SSE" />
+      </div>
+      <div class="client-logo">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=80&fit=crop" alt="L&G" />
+      </div>
+      <div class="client-logo">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=80&fit=crop" alt="Royal Mail" />
+      </div>
+      <div class="client-logo">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=80&fit=crop" alt="M&S" />
+      </div>
+      <div class="client-logo">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=80&fit=crop" alt="Burges Salmon" />
+      </div>
+      <div class="client-logo">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=80&fit=crop" alt="TLT" />
+      </div>
+    </div>
+  </section>
+
+  <!-- LET'S TALK CTA SECTION -->
+  <section class="lets-talk-section">
+    <div class="lets-talk-content">
+      <h2>Let's talk</h2>
+      <p>Interested to know more? Just fill out our quick form and we'll be in touch. No pressure, no hassle, just good, honest conversation.</p>
+
+      <form class="lets-talk-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="talk-name">Name*</label>
+            <input id="talk-name" type="text" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="talk-company">Company*</label>
+            <input id="talk-company" type="text" placeholder="Your company name" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="talk-phone">Phone*</label>
+            <input id="talk-phone" type="tel" placeholder="Your phone number" required>
+          </div>
+          <div class="form-group">
+            <label for="talk-email">Email*</label>
+            <input id="talk-email" type="email" placeholder="Your email address" required>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="talk-message">Message</label>
+          <textarea id="talk-message" placeholder="Tell us more about your inquiry..."></textarea>
+        </div>
+
+        <button type="submit" class="send-btn">Send message</button>
+      </form>
+    </div>
+  </section>
+
   <!-- CTA -->
   <footer class="footer">
     <div class="footer-container">
-      <div class="footer-col"></div>
-      <div class="footer-col"></div>
-      <div class="footer-col"></div>
+      <div class="footer-col">
+        <h3>What we do</h3>
+        <ul>
+          <li><a href="#face-to-face">Face-to-Face Marketing</a></li>
+          <li><a href="#brand-awareness">Brand Awareness</a></li>
+          <li><a href="#event-management">Event Management</a></li>
+          <li><a href="#digital-marketing">Digital Marketing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="#services">Campaign Management</a></li>
+          <li><a href="#services">Marketing Strategy</a></li>
+          <li><a href="#services">Client Relations</a></li>
+          <li><a href="#services">Brand Development</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Specialist Sectors</h3>
+        <ul>
+          <li><a href="#about">Humanitarian Organizations</a></li>
+          <li><a href="#about">Charities</a></li>
+          <li><a href="#about">Medical Community</a></li>
+          <li><a href="#about">Non-Profit Sector</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>More Info</h3>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resources">Resource Hub</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Get Started</h3>
+        <ul>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#book-demo">Book a Demo</a></li>
+          <li><a href="#login">Login</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li>
+            <strong>Ontario</strong><br>
+            110 Matheson Blvd West<br>
+            Mississauga, ON L5R 4G7<br>
+            <a href="tel:+12892778693">+1 (289) 277-8693</a>
+          </li>
+          <li style="margin-top: 20px;">
+            <strong>British Columbia</strong><br>
+            15350 Croydon Dr. #201<br>
+            Surrey, BC V3Z-1H4<br>
+            <a href="tel:+16042658122">+1 (604) 265-8122</a>
+          </li>
+          <li style="margin-top: 20px;">
+            <a href="mailto:Contact@Clearpaths.com">Contact@Clearpaths.com</a><br>
+            <a href="mailto:Recruitment@Clearpaths.com">Recruitment@Clearpaths.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Clearpaths Canada. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Service</a>
+        <a href="#cookies">Cookie Settings</a>
+      </div>
     </div>
   </footer>
 
