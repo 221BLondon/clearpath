@@ -223,21 +223,52 @@ function populateContent() {
 
   // Populate Careers Section
   if (contentData.careers) {
-    const careersTitle = document.getElementById(contentData.careers.titleId);
-    const careersDesc = document.getElementById(contentData.careers.descriptionId);
-    const openingsList = document.getElementById(contentData.careers.openingsContainerId);
+    const careersTitle = document.getElementById('careers-title');
+    const careersDescription = document.getElementById('careers-description');
+    const careersDayInRole = document.getElementById('careers-dayInRole');
+    const careersResponsibilities = document.getElementById('careers-responsibilities');
+    const careersSchedule = document.getElementById('careers-schedule');
+    const careersCompensation = document.getElementById('careers-compensation');
+    const careersLookingFor = document.getElementById('careers-lookingFor');
+    const careersGrowth = document.getElementById('careers-growth');
     
-    if (careersTitle) careersTitle.textContent = contentData.careers.title;
-    if (careersDesc) careersDesc.textContent = contentData.careers.description;
+    if (careersTitle) careersTitle.textContent = contentData.careers.title || '';
+    if (careersDescription) careersDescription.textContent = contentData.careers.description || '';
+    if (careersDayInRole) careersDayInRole.textContent = contentData.careers.dayInRole || '';
+    if (careersSchedule) careersSchedule.textContent = contentData.careers.schedule || '';
+    if (careersCompensation) careersCompensation.textContent = contentData.careers.compensation || '';
+    if (careersGrowth) careersGrowth.textContent = contentData.careers.growth || '';
     
-    // Generate Career Items from JSON
-    if (openingsList && contentData.careers.openings) {
-      openingsList.innerHTML = ''; // Clear default items
-      contentData.careers.openings.forEach((opening, index) => {
-        const openingHTML = `<div class="opening" data-opening="${opening.id}"><div class="opening-title">${opening.title}</div><div class="opening-desc">${opening.description}</div><a class="opening-apply" href="mailto:${opening.applyEmail}?subject=${encodeURIComponent(opening.applySubject)}" target="_blank">Apply Now</a></div>`;
-        openingsList.insertAdjacentHTML('beforeend', openingHTML);
+    // Populate responsibilities list
+    if (careersResponsibilities && contentData.careers.responsibilities) {
+      careersResponsibilities.innerHTML = '';
+      contentData.careers.responsibilities.forEach(resp => {
+        const li = document.createElement('li');
+        li.textContent = resp;
+        careersResponsibilities.appendChild(li);
       });
     }
+    
+    // Populate looking for list
+    if (careersLookingFor && contentData.careers.lookingFor) {
+      careersLookingFor.innerHTML = '';
+      contentData.careers.lookingFor.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        careersLookingFor.appendChild(li);
+      });
+    }
+  }
+
+  // Populate Community Section
+  if (contentData.community) {
+    const communityTitle = document.getElementById('community-title');
+    const communityEngagement = document.getElementById('community-engagement');
+    const communityCommitment = document.getElementById('community-commitment');
+    
+    if (communityTitle) communityTitle.textContent = contentData.community.title || '';
+    if (communityEngagement) communityEngagement.textContent = contentData.community.engagement || '';
+    if (communityCommitment) communityCommitment.textContent = contentData.community.commitment || '';
   }
 
   // Populate FAQ Section
