@@ -242,18 +242,31 @@ function populateContent() {
 
   // Populate FAQ Section
   if (contentData.faq) {
-    const faqTitle = document.getElementById(contentData.faq.titleId);
-    const faqList = document.getElementById(contentData.faq.listContainerId);
+    const faqTitle = document.getElementById('faq-title');
+    const faqList = document.getElementById('faq-list');
     
     if (faqTitle) faqTitle.textContent = contentData.faq.title;
     
     // Generate FAQ Items from JSON
     if (faqList && contentData.faq.items) {
       faqList.innerHTML = ''; // Clear default items
-      contentData.faq.items.forEach((item) => {
-        const faqHTML = `<div class="faq-item"><div class="faq-q">${item.question}</div><div class="faq-a">${item.answer}</div></div>`;
+      contentData.faq.items.forEach((item, index) => {
+        const faqHTML = `
+          <div class="faq-item">
+            <button class="faq-question" data-index="${index}">
+              <span>${item.question}</span>
+              <span class="faq-toggle">▼</span>
+            </button>
+            <div class="faq-answer" data-index="${index}">
+              <p>${item.answer}</p>
+            </div>
+          </div>
+        `;
         faqList.insertAdjacentHTML('beforeend', faqHTML);
       });
+      
+      // Add click handlers for FAQ items
+      initFAQAccordion();
     }
   }
 
@@ -502,6 +515,32 @@ function initTestimonialsCarousel() {
   updateCarousel();
 }
 
+// Initialize FAQ Accordion
+function initFAQAccordion() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  faqQuestions.forEach(button => {
+    button.addEventListener('click', () => {
+      const index = button.getAttribute('data-index');
+      const answer = document.querySelector(`.faq-answer[data-index="${index}"]`);
+      const isActive = answer.classList.contains('active');
+      
+      // Close all other open FAQs
+      document.querySelectorAll('.faq-answer.active').forEach(openAnswer => {
+        openAnswer.classList.remove('active');
+        const openBtn = document.querySelector(`.faq-question[data-index="${openAnswer.getAttribute('data-index')}"]`);
+        if (openBtn) openBtn.classList.remove('active');
+      });
+      
+      // Toggle current FAQ
+      if (!isActive) {
+        answer.classList.add('active');
+        button.classList.add('active');
+      }
+    });
+  });
+}
+
 // Initialize Premium Services Section
 function initPremiumServicesSection() {
   console.log('initPremiumServicesSection called');
@@ -533,28 +572,86 @@ function initPremiumServicesSection() {
   const total = services.length;
   const gap = 80; // Must match CSS margin-bottom
   const viewport = window.innerHeight;
+  const isMobile = window.innerWidth < 900;
 
-  // Calculate dynamic wrapper height
-  wrapper.style.height = (total * viewport + (total - 1) * gap) + 'px';
+  if (!isMobile) {
+    // DESKTOP: Scroll-driven animation
+    wrapper.style.height = (total * viewport + (total - 1) * gap) + 'px';
 
-  // Scroll handler
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const wrapperTop = wrapper.offsetTop;
-    let progress = scrollY - wrapperTop;
+    // Scroll handler
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const wrapperTop = wrapper.offsetTop;
+      let progress = scrollY - wrapperTop;
 
-    if (progress >= 0 && progress <= wrapper.offsetHeight - viewport) {
-      // Move images naturally with gap included
-      track.style.transform = `translateY(-${progress}px)`;
+      if (progress >= 0 && progress <= wrapper.offsetHeight - viewport) {
+        // Move images naturally with gap included
+        track.style.transform = `translateY(-${progress}px)`;
 
-      // Detect current index
-      let index = Math.floor(progress / (viewport + gap));
-      if (index >= total) index = total - 1;
+        // Detect current index
+        let index = Math.floor(progress / (viewport + gap));
+        if (index >= total) index = total - 1;
 
+        titleElement.textContent = services[index].title;
+        descriptionElement.textContent = services[index].description;
+      }
+    });
+  } else {
+    // MOBILE: Carousel - show 1 service at a time
+    let currentIndex = 0;
+    
+    // Update display to show current service
+    function showService(index) {
+      track.style.transform = `translateX(-${index * 100}%)`;
       titleElement.textContent = services[index].title;
       descriptionElement.textContent = services[index].description;
     }
-  });
+    
+    showService(0);
+    
+    // Add navigation buttons
+    const mobileNav = document.createElement('div');
+    mobileNav.className = 'services-mobile-nav';
+    mobileNav.innerHTML = `
+      <button class="services-nav-prev" id="services-prev">←</button>
+      <div class="services-dots" id="services-dots"></div>
+      <button class="services-nav-next" id="services-next">→</button>
+    `;
+    wrapper.appendChild(mobileNav);
+    
+    // Create dots
+    const dotsContainer = document.getElementById('services-dots');
+    services.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'services-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        showService(currentIndex);
+        updateDots();
+      });
+      dotsContainer.appendChild(dot);
+    });
+    
+    function updateDots() {
+      document.querySelectorAll('.services-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+    
+    // Previous button
+    document.getElementById('services-prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + total) % total;
+      showService(currentIndex);
+      updateDots();
+    });
+    
+    // Next button
+    document.getElementById('services-next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % total;
+      showService(currentIndex);
+      updateDots();
+    });
+  }
 
   console.log('Premium services section initialized');
 }
