@@ -105,6 +105,7 @@
 
 
   <!-- PREMIUM SERVICES SCROLL SECTION -->
+  <span id="services"></span>
   <div class="services-premium-wrapper" id="services-premium-wrapper">
     <div class="services-premium-section">
       <!-- Left: Service Title & Description -->
@@ -329,7 +330,58 @@
   <!-- Moved to separate careers.html page -->
 
   <!-- COMMUNITY SECTION -->
-  <!-- Moved to separate careers.html page -->
+  <section class="impact-banner" id="community">
+    <div class="impact-banner-inner">
+      <div class="impact-banner-content">
+        <h2 id="community-title">Creating Meaningful Impact</h2>
+        <p id="community-engagement"></p>
+        <button type="button" class="impact-banner-btn">Join our mission</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES / MISSION / CULTURE SECTION -->
+  <section class="careers-section" id="values">
+    <div class="careers-container">
+      <div class="careers-section-block" id="values1">
+        <div class="career-section-header text-center">
+          <h2>Our Mission, Values &amp; Culture</h2>
+        </div>
+        <div class="careers-grid">
+          <div class="culture-card">
+            <div class="culture-card-image culture-card-image--mission"></div>
+            <div class="culture-card-body">
+              <h3 id="values-mission-title">Our Mission</h3>
+              <p id="values-mission-text" class="culture-text"></p>
+              <div class="culture-card-footer">
+                <span class="culture-index">01/03</span>
+              </div>
+            </div>
+          </div>
+          <div class="culture-card">
+            <div class="culture-card-image culture-card-image--values"></div>
+            <div class="culture-card-body">
+              <h3>Our Values</h3>
+              <p id="values-values-text" class="culture-text"></p>
+              <div class="culture-card-footer">
+                <span class="culture-index">02/03</span>
+              </div>
+            </div>
+          </div>
+          <div class="culture-card">
+            <div class="culture-card-image culture-card-image--culture"></div>
+            <div class="culture-card-body">
+              <h3>Our Culture</h3>
+              <p id="values-culture-text" class="culture-text"></p>
+              <div class="culture-card-footer">
+                <span class="culture-index">03/03</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ SECTION -->
   <section class="faq-section" id="faq">
@@ -397,23 +449,11 @@
 
       <div class="footer-col">
         <h3>Contact</h3>
-        <ul>
-          <li>
-            <strong>Ontario</strong><br>
-            110 Matheson Blvd West<br>
-            Mississauga, ON L5R 4G7<br>
-            <a href="tel:+12892778693">+1 (289) 277-8693</a>
-          </li>
-          <li style="margin-top: 20px;">
-            <strong>British Columbia</strong><br>
-            15350 Croydon Dr. #201<br>
-            Surrey, BC V3Z-1H4<br>
-            <a href="tel:+16042658122">+1 (604) 265-8122</a>
-          </li>
-          <li style="margin-top: 20px;">
-            <a href="mailto:Contact@Clearpaths.com">Contact@Clearpaths.com</a><br>
-            <a href="mailto:Recruitment@Clearpaths.com">Recruitment@Clearpaths.com</a>
-          </li>
+        <ul id="footer-contact-locations">
+          <!-- Locations will be rendered from content.json -->
+        </ul>
+        <ul id="footer-contact-emails" class="footer-contact-emails">
+          <!-- Emails will be rendered from content.json -->
         </ul>
       </div>
     </div>

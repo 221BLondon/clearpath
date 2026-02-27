@@ -180,6 +180,23 @@ function populateContent() {
         if (pointElement) pointElement.textContent = point.text;
       });
     }
+
+    // Populate Values / Mission / Culture section on home page
+    const valuesMissionTitle = document.getElementById('values-mission-title');
+    const valuesMissionText = document.getElementById('values-mission-text');
+    const valuesCultureText = document.getElementById('values-culture-text');
+    const valuesValuesText = document.getElementById('values-values-text');
+
+    if (valuesMissionTitle) valuesMissionTitle.textContent = contentData.about.missionTitle;
+    if (valuesMissionText) valuesMissionText.textContent = contentData.about.missionText;
+    if (valuesCultureText) valuesCultureText.textContent = contentData.about.cultureText;
+
+    if (valuesValuesText && contentData.about.values) {
+      const parts = contentData.about.values.map(
+        (val) => `${val.title} — ${val.description}`
+      );
+      valuesValuesText.textContent = parts.join('  ');
+    }
   }
 
   // Populate Services Section
@@ -322,6 +339,53 @@ function populateContent() {
           }
         }
       });
+    }
+
+    // Populate footer contact locations from content.json -> contact.locations
+    if (contentData.contact.locations && Array.isArray(contentData.contact.locations)) {
+      const footerLocationsList = document.getElementById('footer-contact-locations');
+      if (footerLocationsList) {
+        footerLocationsList.innerHTML = '';
+
+        contentData.contact.locations.forEach((loc, index) => {
+          const li = document.createElement('li');
+          if (index > 0) {
+            li.style.marginTop = '20px';
+          }
+
+          const phoneHref = loc.phone
+            ? 'tel:' + loc.phone.replace(/[^+\d]/g, '')
+            : '';
+
+          li.innerHTML = `
+            <strong>${loc.name}</strong><br>
+            ${loc.address}<br>
+            ${loc.phone ? `<a href="${phoneHref}">${loc.phone}</a>` : ''}
+          `;
+
+          footerLocationsList.appendChild(li);
+        });
+      }
+    }
+
+    // Populate footer contact emails from content.json -> contact.emails
+    if (contentData.contact.emails && Array.isArray(contentData.contact.emails)) {
+      const footerEmailsList = document.getElementById('footer-contact-emails');
+      if (footerEmailsList) {
+        footerEmailsList.innerHTML = '';
+
+        if (contentData.contact.emails.length > 0) {
+          const li = document.createElement('li');
+          li.innerHTML = contentData.contact.emails
+            .map((email, idx) => {
+              const separator = idx === 0 ? '' : '<br>';
+              return `${separator}<a href="mailto:${email}">${email}</a>`;
+            })
+            .join('');
+
+          footerEmailsList.appendChild(li);
+        }
+      }
     }
   }
 

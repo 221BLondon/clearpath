@@ -1,9 +1,9 @@
 {
   "hero": {
     "id": "hero-section",
-    "title": "Welcome to ClearPaths Marketing",
+    "title": "Building Connections That Create Real Impact",
     "titleId": "hero-title",
-    "description": "We're a dynamic face-to-face marketing and outreach company committed to connecting communities with purpose-driven organizations. If you're looking to make a real impact while building valuable skills in a supportive environment, we want to meet you.",
+    "description": "ClearPaths Marketing is a face-to-face outreach and field marketing company connecting communities with meaningful charitable and humanitarian initiatives across the Greater Toronto Area.",
     "descriptionId": "hero-description",
     "primaryBtnText": "Apply Now",
     "primaryBtnId": "hero-btn-primary",
@@ -14,16 +14,16 @@
     "id": "intro-section",
     "title": "What We Do",
     "titleId": "intro-title",
-    "description": "At ClearPaths Marketing, we specialize in direct community engagement and brand awareness for organizations that matter. Our professional field teams connect people face-to-face with causes they care about, building lasting relationships and creating meaningful conversations that drive real change.",
+    "description": "At ClearPaths Marketing, we specialize in direct community engagement. Our teams work face-to-face with the public to raise awareness, build trust, and generate long-term support for important causes. We believe genuine human interaction creates stronger connections than digital outreach alone.",
     "descriptionId": "intro-description",
     "btnText": "Join Our Team",
     "btnId": "intro-btn"
   },
   "about": {
     "id": "about-section",
-    "title": "About ClearPaths Marketing",
+    "title": "Who We Are",
     "titleId": "about-title",
-    "description": "ClearPaths Marketing is a community outreach and direct engagement company focused on helping organizations connect with people through meaningful, face-to-face conversations.",
+    "description": "ClearPaths Marketing is a community outreach and direct engagement company focused on helping organizations connect with people through meaningful, face-to-face conversations. Our teams represent charitable and humanitarian initiatives by engaging directly with communities, educating the public, and building long-term supporter relationships.",
     "descriptionId": "about-description",
     "imageUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=800&fit=crop",
     "imageId": "about-image",
@@ -116,35 +116,35 @@
     "id": "careers-section",
     "title": "Join Our Team",
     "titleId": "careers-title",
-    "description": "We're looking for motivated individuals who want to make a real impact while building valuable professional skills. If you're confident, communicative, and ready to represent meaningful organizations in your community, we'd love to meet you.",
+    "description": "ClearPaths Marketing is currently seeking motivated individuals to join our outreach and engagement team. This is a full-time, in-person opportunity combining office training with field outreach activities.",
     "descriptionId": "careers-description",
-    "dayInRole": "Your typical day includes initial team training and briefings in the office, followed by out-of-office engagement with community members. You'll be representing partner organizations, having meaningful conversations, and helping connect people to causes they care about.",
+    "dayInRole": "Team members begin their day with training sessions, team meetings, and preparation before participating in community outreach campaigns where they engage directly with members of the public.",
     "responsibilities": [
-      "Represent partner organizations professionally and authentically",
-      "Engage in one-on-one conversations with community members",
-      "Present campaign information clearly and confidently",
-      "Build genuine relationships and answer questions",
-      "Attend daily training and coaching sessions",
-      "Meet individual and team performance goals"
+      "Represent partner organizations professionally",
+      "Engage in face-to-face conversations with the public",
+      "Deliver clear and confident campaign presentations",
+      "Build positive community relationships",
+      "Participate in daily training and coaching sessions",
+      "Work toward individual and team performance goals"
     ],
-    "schedule": "Monday to Friday, 12:30 PM – 8:30 PM | Mix of office training and field outreach work",
-    "compensation": "Daily base support + performance-based commissions. New: $500–$800/week | Developing: $800–$1,200/week | Experienced: $1,000–$1,500+/week",
+    "schedule": "Monday to Friday, 12:30 PM – 8:30 PM | Combination of office and field work",
+    "compensation": "Our compensation model rewards performance while providing daily earning support. Daily base support provided when working, plus performance-based commissions. Weekly earnings typically range: New representatives: $500–$800/week; Developing representatives: $800–$1,200/week; Experienced performers: $1,000–$1,500+/week. Full training is provided; previous experience is not required.",
     "lookingFor": [
-      "Confident and outgoing personality",
-      "Strong communication skills",
+      "Confident and outgoing",
+      "Strong communicators",
       "Coachable and eager to learn",
-      "Self-motivated and goal-oriented",
-      "Team player mentality"
+      "Motivated by growth and performance",
+      "Comfortable working in team environments"
     ],
-    "growth": "We promote from within and develop our team members into leadership roles. With dedication, you can advance into coaching, team lead, and management positions as you grow with us.",
-    "applySection": "Interested? Apply now to join the ClearPaths team and start making an impact."
+    "growth": "We believe in promoting from within. Team members who demonstrate consistency and leadership potential can progress into training and leadership responsibilities over time.",
+    "applySection": "Submit your application through our online form. Shortlisted candidates will be contacted by our recruitment team to schedule an interview."
   },
   "community": {
     "id": "community-section",
     "title": "Creating Meaningful Impact",
     "titleId": "community-title",
-    "engagement": "Through face-to-face outreach, our teams connect communities with humanitarian and nonprofit organizations that are making a real difference. Every conversation builds awareness, educates people about important causes, and creates opportunities for meaningful involvement. We believe personal interaction creates stronger understanding and lasting community support.",
-    "commitment": "We're committed to ethical, respectful outreach that represents our partner organizations with professionalism and integrity. Every team member is trained to communicate with respect and authenticity."
+    "engagement": "At ClearPaths Marketing, our work goes beyond marketing — it’s about connecting people with causes that matter. Through face-to-face outreach, our teams help raise awareness and support for humanitarian and nonprofit initiatives that focus on improving lives and strengthening communities. Every conversation contributes to greater awareness and involvement within local communities.",
+    "commitment": "We are committed to ethical outreach practices, respectful communication, and representing our partner organizations with professionalism and integrity."
   },
   "contact": {
     "id": "contact-section",
@@ -152,6 +152,10 @@
     "titleId": "contact-title",
     "email": "marketingclearpaths@gmail.com",
     "emailId": "contact-email",
+    "emails": [
+      "Contact@Clearpaths.com",
+      "Recruitment@Clearpaths.com"
+    ],
     "serviceAreas": {
       "title": "Service Areas",
       "locations": ["Toronto", "Mississauga", "Brampton", "Etobicoke"]
@@ -159,7 +163,21 @@
     "cta": {
       "title": "Ready to start your career with ClearPaths Marketing?",
       "description": "Apply today and a member of our recruitment team will contact shortlisted candidates."
-    }
+    },
+    "locations": [
+      {
+        "id": "location-1",
+        "name": "Ontario",
+        "address": "110 Matheson Blvd West, Mississauga, ON L5R 4G7",
+        "phone": "+1 (289) 277-8693"
+      },
+      {
+        "id": "location-2",
+        "name": "British Columbia",
+        "address": "15350 Croydon Dr. #201, Surrey, BC V3Z-1H4",
+        "phone": "+1 (604) 265-8122"
+      }
+    ]
   },
   "faq": {
     "id": "faq-section",
@@ -180,7 +198,7 @@
       {
         "id": "faq-3",
         "question": "Is a vehicle required?",
-        "answer": "No vehicle or driver's license is required."
+        "answer": "No vehicle or driver’s license is required."
       },
       {
         "id": "faq-4",
