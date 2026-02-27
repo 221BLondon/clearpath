@@ -2215,6 +2215,12 @@ section {
 .careers-grid.values {
   grid-template-columns: repeat(3, minmax(300px, 1fr));
 }
+/* Mobile */
+@media (max-width: 768px) {
+  .careers-grid.values {
+    grid-template-columns: 1fr; /* 👈 Show only 1 card */
+  }
+}
 .career-card {
   background: white;
   border-radius: 16px;
