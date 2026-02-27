@@ -238,6 +238,54 @@ function populateContent() {
     }
   }
 
+  // Populate Testimonials Section
+  if (contentData.testimonials) {
+    const testimonialsTitle = document.getElementById(contentData.testimonials.titleId);
+    const testimonialsSubtitle = document.getElementById(contentData.testimonials.subtitleId);
+    const carouselId = contentData.testimonials.carouselId || 'testimonials-carousel';
+    const carousel = document.getElementById(carouselId);
+
+    if (testimonialsTitle) testimonialsTitle.textContent = contentData.testimonials.title || '';
+    if (testimonialsSubtitle) testimonialsSubtitle.textContent = contentData.testimonials.subtitle || '';
+
+    if (carousel && Array.isArray(contentData.testimonials.items)) {
+      carousel.innerHTML = '';
+
+      contentData.testimonials.items.forEach((item) => {
+        const quote = item.quote ? `"${item.quote}"` : '';
+        const bg = item.imageUrl ? `--bg-image: url('${item.imageUrl}');` : '';
+        const logoHtml = item.logoUrl
+          ? `<div class="testimonial-logo"><img src="${item.logoUrl}" alt="${item.company || 'Client'}" /></div>`
+          : '';
+
+        const cardHtml = `
+          <div class="testimonial-card" style="${bg}">
+            <div class="testimonial-image">
+              <div class="testimonial-arrow">↗</div>
+            </div>
+            <div class="testimonial-overlay">
+              <div class="testimonial-content">
+                <p class="testimonial-quote">${quote}</p>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                <div>
+                  <p class="testimonial-role">${item.role || ''}</p>
+                  <p class="testimonial-company">${item.company || ''}</p>
+                </div>
+                ${logoHtml}
+              </div>
+            </div>
+          </div>
+        `;
+
+        carousel.insertAdjacentHTML('beforeend', cardHtml);
+      });
+    }
+
+    // Re-init carousel after dynamic render (safe, idempotent)
+    initTestimonialsCarousel();
+  }
+
   // Populate Careers Section
   if (contentData.careers) {
     const careersTitle = document.getElementById('careers-title');
@@ -246,6 +294,7 @@ function populateContent() {
     const careersResponsibilities = document.getElementById('careers-responsibilities');
     const careersSchedule = document.getElementById('careers-schedule');
     const careersCompensation = document.getElementById('careers-compensation');
+    const careersSalaryBands = document.getElementById('careers-salary-bands');
     const careersLookingFor = document.getElementById('careers-lookingFor');
     const careersGrowth = document.getElementById('careers-growth');
     
@@ -273,6 +322,21 @@ function populateContent() {
         const li = document.createElement('li');
         li.textContent = item;
         careersLookingFor.appendChild(li);
+      });
+    }
+
+    // Populate salary bands grid
+    if (careersSalaryBands && Array.isArray(contentData.careers.salaryBands)) {
+      careersSalaryBands.innerHTML = '';
+      contentData.careers.salaryBands.forEach((band) => {
+        const card = document.createElement('div');
+        card.className = 'salary-band-card';
+        card.innerHTML = `
+          <div class="salary-band-label">${band.label || ''}</div>
+          <div class="salary-band-range">${band.range || ''}</div>
+          ${band.description ? `<p class="salary-band-description">${band.description}</p>` : ''}
+        `;
+        careersSalaryBands.appendChild(card);
       });
     }
   }
@@ -392,35 +456,60 @@ function populateContent() {
   // Populate Footer Section
   if (contentData.footer) {
     const footerCols = document.querySelectorAll('.footer-col');
-    
-    if (footerCols.length >= 3) {
-      // Column 1
-      const col1 = footerCols[0];
-      col1.innerHTML = `
-        <h3>${contentData.footer.col1Title}</h3>
-        <p>${contentData.footer.col1Desc}</p>
-        <p>${contentData.footer.col1Email1}</p>
-        <p>${contentData.footer.col1Email2}</p>
-        <p class="copyright">${contentData.footer.col1Copyright}</p>
-      `;
+    const footerConfig = contentData.footer;
+    const columns = footerConfig.columns || [];
 
-      // Column 2
-      const col2 = footerCols[1];
-      col2.innerHTML = `
-        <h3>${contentData.footer.col2Title}</h3>
-        <p>${contentData.footer.col2Location1}</p>
-        <br>
-        <p>${contentData.footer.col2Location2}</p>
-      `;
+    // First N-1 columns are standard link groups driven by footer.columns
+    const standardColsCount = Math.min(columns.length, Math.max(footerCols.length - 1, 0));
+    for (let i = 0; i < standardColsCount; i++) {
+      const colEl = footerCols[i];
+      const colConfig = columns[i];
+      if (!colEl || !colConfig) continue;
 
-      // Column 3
-      const col3 = footerCols[2];
-      col3.innerHTML = `
-        <h3>${contentData.footer.col3Title}</h3>
-        <p>${contentData.footer.col3Desc}</p>
-        <input type="email" placeholder="Your email for contact" />
-        <button class="footer-btn">${contentData.footer.col3BtnText}</button>
+      const items = colConfig.items || [];
+      const itemsHtml = items
+        .map(item => {
+          if (!item) return '';
+          const label = item.label || '';
+          const href = item.href || '';
+          if (!label) return '';
+          return `<li>${href ? `<a href="${href}">${label}</a>` : label}</li>`;
+        })
+        .join('');
+
+      colEl.innerHTML = `
+        <h3>${colConfig.title || ''}</h3>
+        <ul>
+          ${itemsHtml}
+        </ul>
       `;
+    }
+
+    // Contact footer column title (last column)
+    if (footerCols.length > 0 && footerConfig.contactTitle) {
+      const contactCol = footerCols[footerCols.length - 1];
+      const contactHeading = contactCol.querySelector('h3');
+      if (contactHeading) {
+        contactHeading.textContent = footerConfig.contactTitle;
+      }
+    }
+
+    // Footer bottom text
+    const bottomTextEl = document.querySelector('.footer-bottom p');
+    if (bottomTextEl && footerConfig.bottomText) {
+      bottomTextEl.textContent = footerConfig.bottomText;
+    }
+
+    // Footer bottom links
+    const bottomLinksEl = document.querySelector('.footer-bottom .footer-links');
+    if (bottomLinksEl && Array.isArray(footerConfig.bottomLinks)) {
+      bottomLinksEl.innerHTML = footerConfig.bottomLinks
+        .map(link => {
+          if (!link || !link.label) return '';
+          const href = link.href || '#';
+          return `<a href="${href}">${link.label}</a>`;
+        })
+        .join('');
     }
   }
 }
@@ -535,7 +624,7 @@ function initServicesScroll() {
 // Initialize services scroll on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   initServicesScroll();
-  initTestimonialsCarousel();
+  // Testimonials are initialized after rendering from content.json
 });
 
 
@@ -543,16 +632,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initTestimonialsCarousel() {
   const carousel = document.getElementById('testimonials-carousel');
-  const cards = document.querySelectorAll('.testimonial-card');
+  const cards = carousel ? carousel.querySelectorAll('.testimonial-card') : [];
   const prevBtn = document.getElementById('testimonials-prev');
   const nextBtn = document.getElementById('testimonials-next');
-  const arrows = document.querySelectorAll('.testimonial-arrow');
+  const arrows = carousel ? carousel.querySelectorAll('.testimonial-arrow') : [];
 
   console.log('initTestimonialsCarousel called');
   console.log('Found ' + cards.length + ' testimonial cards');
   console.log('Found ' + arrows.length + ' arrows');
 
-  if (cards.length === 0) return;
+  if (!carousel || cards.length === 0 || !prevBtn || !nextBtn) return;
 
   let currentIndex = Math.floor(cards.length / 2); // Start with middle card
   console.log('Starting at index:', currentIndex);
@@ -580,31 +669,38 @@ function initTestimonialsCarousel() {
     updateCarousel();
   }
 
-  // Event listeners - Navigation buttons
-  nextBtn.addEventListener('click', () => {
+  // Event handlers (overwrite to avoid duplicate listeners on re-init)
+  nextBtn.onclick = () => {
     console.log('Next button clicked');
     nextCard();
-  });
-  prevBtn.addEventListener('click', () => {
+  };
+  prevBtn.onclick = () => {
     console.log('Prev button clicked');
     prevCard();
-  });
+  };
 
   // Event listeners - Arrow icons (click to go to next)
   arrows.forEach((arrow, index) => {
-    arrow.addEventListener('click', (e) => {
+    arrow.onclick = (e) => {
       e.preventDefault();
       e.stopPropagation();
       console.log('Arrow ' + index + ' clicked');
       nextCard();
-    });
+    };
   });
 
-  // Keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') nextCard();
-    if (e.key === 'ArrowLeft') prevCard();
-  });
+  // Keyboard navigation (only register once)
+  if (!window.__testimonialsKeyListener) {
+    document.addEventListener('keydown', (e) => {
+      const activeCarousel = document.getElementById('testimonials-carousel');
+      const activeCards = activeCarousel ? activeCarousel.querySelectorAll('.testimonial-card') : [];
+      if (!activeCarousel || activeCards.length === 0) return;
+
+      if (e.key === 'ArrowRight') nextCard();
+      if (e.key === 'ArrowLeft') prevCard();
+    });
+    window.__testimonialsKeyListener = true;
+  }
 
   // Initialize
   updateCarousel();

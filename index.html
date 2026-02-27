@@ -36,9 +36,8 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <video autoplay muted loop>
-      <!-- replace with your video/gif -->
-      <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/6527135/6527135-hd_1920_1080_25fps.mp4" type="video/mp4">
     </video>
 
     <div class="overlay"></div>
@@ -128,118 +127,13 @@
   <!-- TESTIMONIALS -->
   <section class="testimonials-section">
     <div class="testimonials-header">
-      <h2>Client Testimonials</h2>
-      <p>Hear what our clients have to say about working with Clearpaths</p>
+      <h2 id="testimonials-title">Client Testimonials</h2>
+      <p id="testimonials-subtitle">Hear what our clients have to say about working with Clearpaths</p>
     </div>
     
     <div class="testimonials-container">
       <div class="testimonials-carousel" id="testimonials-carousel">
-        
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card" style="--bg-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=500&fit=crop');">
-          <div class="testimonial-image">
-            <div class="testimonial-arrow">↗</div>
-          </div>
-          <div class="testimonial-overlay">
-            <div class="testimonial-content">
-              <p class="testimonial-quote">"Clearpaths transformed our marketing strategy completely. Their face-to-face approach helped us connect with our donor base in ways we never thought possible."</p>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-              <div>
-                <p class="testimonial-role">Marketing Director</p>
-                <p class="testimonial-company">Hope International</p>
-              </div>
-              <div class="testimonial-logo">
-                <img src="https://via.placeholder.com/90x45/cccccc/ffffff?text=Hope" alt="Hope International" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card" style="--bg-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=500&fit=crop');">
-          <div class="testimonial-image">
-            <div class="testimonial-arrow">↗</div>
-          </div>
-          <div class="testimonial-overlay">
-            <div class="testimonial-content">
-              <p class="testimonial-quote">"Working with Clearpaths was seamless from start to finish. They quickly understood our needs and delivered a solution that exceeded expectations."</p>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-              <div>
-                <p class="testimonial-role">Operations Travel Assistant</p>
-                <p class="testimonial-company">Burges Salmon</p>
-              </div>
-              <div class="testimonial-logo">
-                <img src="https://via.placeholder.com/90x45/cccccc/ffffff?text=Burges" alt="Burges Salmon" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card" style="--bg-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=500&fit=crop');">
-          <div class="testimonial-image">
-            <div class="testimonial-arrow">↗</div>
-          </div>
-          <div class="testimonial-overlay">
-            <div class="testimonial-content">
-              <p class="testimonial-quote">"The team at Clearpaths brought such energy and expertise to our event. Their campaigns resulted in a 40% increase in brand awareness."</p>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-              <div>
-                <p class="testimonial-role">Event Manager</p>
-                <p class="testimonial-company">Medical Relief Foundation</p>
-              </div>
-              <div class="testimonial-logo">
-                <img src="https://via.placeholder.com/90x45/cccccc/ffffff?text=Medical" alt="Medical Relief Foundation" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 4 -->
-        <div class="testimonial-card" style="--bg-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=500&fit=crop');">
-          <div class="testimonial-image">
-            <div class="testimonial-arrow">↗</div>
-          </div>
-          <div class="testimonial-overlay">
-            <div class="testimonial-content">
-              <p class="testimonial-quote">"Clearpaths doesn't just deliver campaigns, they deliver results. Their understanding of the humanitarian sector is unmatched."</p>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-              <div>
-                <p class="testimonial-role">Communications Lead</p>
-                <p class="testimonial-company">Global Health Alliance</p>
-              </div>
-              <div class="testimonial-logo">
-                <img src="https://via.placeholder.com/90x45/cccccc/ffffff?text=Global" alt="Global Health Alliance" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 5 -->
-        <div class="testimonial-card" style="--bg-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=500&fit=crop');">
-          <div class="testimonial-image">
-            <div class="testimonial-arrow">↗</div>
-          </div>
-          <div class="testimonial-overlay">
-            <div class="testimonial-content">
-              <p class="testimonial-quote">"Professional, creative, and results-driven. Clearpaths is the best agency we've worked with in the non-profit space."</p>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-              <div>
-                <p class="testimonial-role">Executive Director</p>
-                <p class="testimonial-company">Community Care Initiative</p>
-              </div>
-              <div class="testimonial-logo">
-                <img src="https://via.placeholder.com/90x45/cccccc/ffffff?text=Community" alt="Community Care Initiative" />
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <!-- Testimonials will be loaded from JSON here -->
       </div>
 
       <!-- Navigation Arrows -->
@@ -347,7 +241,7 @@
         <div class="career-section-header text-center">
           <h2>Our Mission, Values &amp; Culture</h2>
         </div>
-        <div class="careers-grid">
+        <div class="careers-grid values">
           <div class="culture-card">
             <div class="culture-card-image culture-card-image--mission"></div>
             <div class="culture-card-body">

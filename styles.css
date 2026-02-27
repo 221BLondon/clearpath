@@ -2208,11 +2208,13 @@ section {
 /* Career Cards Grid */
 .careers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 30px;
   margin-bottom: 80px;
 }
-
+.careers-grid.values {
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
 .career-card {
   background: white;
   border-radius: 16px;
@@ -2248,6 +2250,71 @@ section {
   line-height: 1.6;
 }
 
+/* Highlighted compensation card */
+.career-card--compensation {
+  grid-column: 1 / 3;
+  text-align: left;
+  background: radial-gradient(circle at top left, #fff7cc 0%, #ffffff 45%, #f3f4ff 100%);
+  border-color: rgba(255, 214, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.career-card--compensation::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(circle at top right, rgba(255, 214, 0, 0.25), transparent 60%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.career-card--compensation > * {
+  position: relative;
+  z-index: 1;
+}
+
+.career-compensation-summary {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.salary-band-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.salary-band-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  padding: 14px 16px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+}
+
+.salary-band-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.salary-band-range {
+  font-size: 18px;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 4px;
+}
+
+.salary-band-description {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
 /* Section Blocks */
 .careers-section-block:not(#values1) {
   background: white;
@@ -2256,6 +2323,18 @@ section {
   margin-bottom: 40px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   border-left: 5px solid #ffd600;
+}
+
+/* Careers two-column blocks (Responsibilities + Looking For) */
+.careers-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.careers-two-col .careers-section-block:not(#values1) {
+  margin-bottom: 0;
 }
 
 .career-section-header {
@@ -2449,6 +2528,11 @@ section {
 
   .careers-section-block {
     padding: 30px 20px;
+  }
+
+  .careers-two-col {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .career-section-header h2 {

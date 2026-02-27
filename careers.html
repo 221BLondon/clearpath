@@ -58,27 +58,32 @@
         </div>
 
         <!-- Compensation -->
-        <div class="career-card">
+        <div class="career-card career-card--compensation">
           <div class="career-card-icon">💰</div>
-          <h3>Compensation</h3>
-          <p id="careers-compensation"></p>
+          <h3>Compensation & Growth</h3>
+          <p id="careers-compensation" class="career-compensation-summary"></p>
+          <div class="salary-band-grid" id="careers-salary-bands">
+            <!-- Salary bands will be rendered from content.json -->
+          </div>
         </div>
       </div>
 
-      <!-- Responsibilities Section -->
-      <div class="careers-section-block">
-        <div class="career-section-header">
-          <h2>✓ Your Responsibilities</h2>
+      <div class="careers-two-col">
+        <!-- Responsibilities Section -->
+        <div class="careers-section-block">
+          <div class="career-section-header">
+            <h2>✓ Your Responsibilities</h2>
+          </div>
+          <ul id="careers-responsibilities" class="careers-list"></ul>
         </div>
-        <ul id="careers-responsibilities" class="careers-list"></ul>
-      </div>
 
-      <!-- Looking For Section -->
-      <div class="careers-section-block">
-        <div class="career-section-header">
-          <h2>👥 We're Looking For</h2>
+        <!-- Looking For Section -->
+        <div class="careers-section-block">
+          <div class="career-section-header">
+            <h2>👥 We're Looking For</h2>
+          </div>
+          <ul id="careers-lookingFor" class="careers-list"></ul>
         </div>
-        <ul id="careers-lookingFor" class="careers-list"></ul>
       </div>
 
       <!-- Growth Section -->
