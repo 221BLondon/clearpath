@@ -283,7 +283,7 @@ function populateContent() {
     }
 
     // Re-init carousel after dynamic render (safe, idempotent)
-    initTestimonialsCarousel();
+    // initTestimonialsCarousel();
   }
 
   // Populate Careers Section
@@ -630,81 +630,81 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ---------------- TESTIMONIALS CAROUSEL ---------- */
 
-function initTestimonialsCarousel() {
-  const carousel = document.getElementById('testimonials-carousel');
-  const cards = carousel ? carousel.querySelectorAll('.testimonial-card') : [];
-  const prevBtn = document.getElementById('testimonials-prev');
-  const nextBtn = document.getElementById('testimonials-next');
-  const arrows = carousel ? carousel.querySelectorAll('.testimonial-arrow') : [];
+// function initTestimonialsCarousel() {
+//   const carousel = document.getElementById('testimonials-carousel');
+//   const cards = carousel ? carousel.querySelectorAll('.testimonial-card') : [];
+//   const prevBtn = document.getElementById('testimonials-prev');
+//   const nextBtn = document.getElementById('testimonials-next');
+//   const arrows = carousel ? carousel.querySelectorAll('.testimonial-arrow') : [];
 
-  console.log('initTestimonialsCarousel called');
-  console.log('Found ' + cards.length + ' testimonial cards');
-  console.log('Found ' + arrows.length + ' arrows');
+//   console.log('initTestimonialsCarousel called');
+//   console.log('Found ' + cards.length + ' testimonial cards');
+//   console.log('Found ' + arrows.length + ' arrows');
 
-  if (!carousel || cards.length === 0 || !prevBtn || !nextBtn) return;
+//   if (!carousel || cards.length === 0 || !prevBtn || !nextBtn) return;
 
-  let currentIndex = Math.floor(cards.length / 2); // Start with middle card
-  console.log('Starting at index:', currentIndex);
+//   let currentIndex = Math.floor(cards.length / 2); // Start with middle card
+//   console.log('Starting at index:', currentIndex);
 
-  function updateCarousel() {
-    console.log('updateCarousel called, currentIndex:', currentIndex);
-    cards.forEach((card, index) => {
-      card.classList.remove('active');
-      if (index === currentIndex) {
-        card.classList.add('active');
-        console.log('Added active class to card', index);
-      }
-    });
-  }
+//   function updateCarousel() {
+//     console.log('updateCarousel called, currentIndex:', currentIndex);
+//     cards.forEach((card, index) => {
+//       card.classList.remove('active');
+//       if (index === currentIndex) {
+//         card.classList.add('active');
+//         console.log('Added active class to card', index);
+//       }
+//     });
+//   }
 
-  function nextCard() {
-    currentIndex = (currentIndex + 1) % cards.length;
-    console.log('nextCard() - new index:', currentIndex);
-    updateCarousel();
-  }
+//   function nextCard() {
+//     currentIndex = (currentIndex + 1) % cards.length;
+//     console.log('nextCard() - new index:', currentIndex);
+//     updateCarousel();
+//   }
 
-  function prevCard() {
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    console.log('prevCard() - new index:', currentIndex);
-    updateCarousel();
-  }
+//   function prevCard() {
+//     currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+//     console.log('prevCard() - new index:', currentIndex);
+//     updateCarousel();
+//   }
 
-  // Event handlers (overwrite to avoid duplicate listeners on re-init)
-  nextBtn.onclick = () => {
-    console.log('Next button clicked');
-    nextCard();
-  };
-  prevBtn.onclick = () => {
-    console.log('Prev button clicked');
-    prevCard();
-  };
+//   // Event handlers (overwrite to avoid duplicate listeners on re-init)
+//   nextBtn.onclick = () => {
+//     console.log('Next button clicked');
+//     nextCard();
+//   };
+//   prevBtn.onclick = () => {
+//     console.log('Prev button clicked');
+//     prevCard();
+//   };
 
-  // Event listeners - Arrow icons (click to go to next)
-  arrows.forEach((arrow, index) => {
-    arrow.onclick = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      console.log('Arrow ' + index + ' clicked');
-      nextCard();
-    };
-  });
+//   // Event listeners - Arrow icons (click to go to next)
+//   arrows.forEach((arrow, index) => {
+//     arrow.onclick = (e) => {
+//       e.preventDefault();
+//       e.stopPropagation();
+//       console.log('Arrow ' + index + ' clicked');
+//       nextCard();
+//     };
+//   });
 
-  // Keyboard navigation (only register once)
-  if (!window.__testimonialsKeyListener) {
-    document.addEventListener('keydown', (e) => {
-      const activeCarousel = document.getElementById('testimonials-carousel');
-      const activeCards = activeCarousel ? activeCarousel.querySelectorAll('.testimonial-card') : [];
-      if (!activeCarousel || activeCards.length === 0) return;
+//   // Keyboard navigation (only register once)
+//   if (!window.__testimonialsKeyListener) {
+//     document.addEventListener('keydown', (e) => {
+//       const activeCarousel = document.getElementById('testimonials-carousel');
+//       const activeCards = activeCarousel ? activeCarousel.querySelectorAll('.testimonial-card') : [];
+//       if (!activeCarousel || activeCards.length === 0) return;
 
-      if (e.key === 'ArrowRight') nextCard();
-      if (e.key === 'ArrowLeft') prevCard();
-    });
-    window.__testimonialsKeyListener = true;
-  }
+//       if (e.key === 'ArrowRight') nextCard();
+//       if (e.key === 'ArrowLeft') prevCard();
+//     });
+//     window.__testimonialsKeyListener = true;
+//   }
 
-  // Initialize
-  updateCarousel();
-}
+//   // Initialize
+//   updateCarousel();
+// }
 
 // Initialize FAQ Accordion
 function initFAQAccordion() {

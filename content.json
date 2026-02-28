@@ -71,7 +71,7 @@
         "titleId": "service-1-title",
         "description": "Our representatives engage directly with communities through residential and public outreach campaigns, creating authentic conversations that build trust and awareness.",
         "descriptionId": "service-1-description",
-        "imageUrl": "assets/image1.jpg",
+        "imageUrl": "assets/img1.jpg",
         "imageId": "service-1-image"
       },
       {
@@ -80,7 +80,7 @@
         "titleId": "service-2-title",
         "description": "We help organizations strengthen their presence by connecting directly with local communities through meaningful interactions and education-focused outreach.",
         "descriptionId": "service-2-description",
-        "imageUrl": "assets/image2.jpg",
+        "imageUrl": "assets/img2.jpg",
         "imageId": "service-2-image"
       },
       {
@@ -89,7 +89,7 @@
         "titleId": "service-3-title",
         "description": "Through professional communication and relationship-building, our teams help organizations expand their supporter base and increase long-term engagement.",
         "descriptionId": "service-3-description",
-        "imageUrl": "assets/image3.jpg",
+        "imageUrl": "assets/img3.jpg",
         "imageId": "service-3-image"
       },
       {
@@ -98,7 +98,7 @@
         "titleId": "service-4-title",
         "description": "We represent partner organizations in public environments, helping communicate their mission clearly and effectively to new audiences.",
         "descriptionId": "service-4-description",
-        "imageUrl": "assets/image4.jpg",
+        "imageUrl": "assets/img4.jpg",
         "imageId": "service-4-image"
       },
       {
@@ -107,7 +107,7 @@
         "titleId": "service-5-title",
         "description": "Our teams participate in community events and outreach activities designed to increase visibility and public engagement.",
         "descriptionId": "service-5-description",
-        "imageUrl": "assets/image8.jpg",
+        "imageUrl": "assets/img5.jpg",
         "imageId": "service-5-image"
       }
     ]
