@@ -235,13 +235,13 @@
     },
     "locations": [
       {
-        "id": "location-1",
+        "id": null,
         "name": "Ontario",
         "address": "110 Matheson Blvd West, Mississauga, ON L5R 4G7",
         "phone": "+1 (289) 277-8693"
       },
       {
-        "id": "location-2",
+        "id": null,
         "name": "British Columbia",
         "address": "15350 Croydon Dr. #201, Surrey, BC V3Z-1H4",
         "phone": "+1 (604) 265-8122"
@@ -300,36 +300,31 @@
       {
         "title": "Our Services",
         "items": [
-          { "label": "Campaign Management", "href": "#services" },
-          { "label": "Marketing Strategy", "href": "#services" },
-          { "label": "Client Relations", "href": "#services" },
-          { "label": "Brand Development", "href": "#services" }
+          { "label": "Campaign Management", "href": "index.html#services" },
+          { "label": "Marketing Strategy", "href": "index.html#services" },
+          { "label": "Client Relations", "href": "index.html#services" },
+          { "label": "Brand Development", "href": "index.html#services" }
         ]
       },
       {
         "title": "Specialist Sectors",
         "items": [
-          { "label": "Humanitarian Organizations", "href": "#about" },
-          { "label": "Charities", "href": "#about" },
-          { "label": "Medical Community", "href": "#about" },
-          { "label": "Non-Profit Sector", "href": "#about" }
+          { "label": "Humanitarian Organizations", "href": "index.html#about" },
+          { "label": "Charities", "href": "index.html#about" },
+          { "label": "Medical Community", "href": "index.html#about" },
+          { "label": "Non-Profit Sector", "href": "index.html#about" }
         ]
       },
       {
         "title": "More Info",
         "items": [
-          { "label": "About", "href": "#about" },
-          { "label": "Resource Hub", "href": "#resources" },
-          { "label": "Blog", "href": "#blog" }
+          { "label": "About", "href": "index.html#about" }
         ]
       },
       {
         "title": "Get Started",
         "items": [
-          { "label": "Contact", "href": "#contact" },
-          { "label": "Book a Demo", "href": "#book-demo" },
-          { "label": "Login", "href": "#login" },
-          { "label": "Pricing", "href": "#pricing" }
+          { "label": "Contact", "href": "index.html#contact" }
         ]
       }
     ],

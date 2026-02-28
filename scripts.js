@@ -411,7 +411,7 @@ function populateContent() {
       if (footerLocationsList) {
         footerLocationsList.innerHTML = '';
 
-        contentData.contact.locations.forEach((loc, index) => {
+        contentData.contact.locations.filter(loc => loc.id !== null).forEach((loc, index) => {
           const li = document.createElement('li');
           if (index > 0) {
             li.style.marginTop = '20px';

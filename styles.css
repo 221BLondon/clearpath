@@ -52,7 +52,7 @@ nav {
   width: 100%;
   padding: 16px 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   z-index: 1000;
   background: #f5f5f5;
@@ -67,7 +67,7 @@ nav h2 {
   flex: 0 0 auto;
   margin: 0;
   font-weight: 700;
-  color: #222;
+  color: #1c085d;
 }
 
 nav ul {
@@ -76,7 +76,7 @@ nav ul {
   gap: 40px;
   flex-wrap: wrap;
   justify-content: center;
-  flex: 1;
+  /* flex: 1; */
   margin: 0 40px;
 }
 
@@ -86,7 +86,7 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #555;
+  color: #1c085d;
   font-weight: 500;
   transition: color 0.3s;
   font-size: 15px;
@@ -288,7 +288,7 @@ nav.scrolled .hamburger span {
   }
 
   nav ul {
-    top: 50px;
+    margin: 0;
   }
 
   nav a {
@@ -1560,6 +1560,7 @@ section {
   .services-premium-section {
     padding: 40px 20px;
     gap: 30px;
+    min-height: 500px;
   }
 
   .services-premium-title {
@@ -2101,6 +2102,8 @@ section {
   .testimonials-carousel {
     grid-template-columns: 1fr;
     gap: 20px;
+    width: 90%;
+
   }
 
   .testimonial-card {
@@ -2108,6 +2111,7 @@ section {
     opacity: 1;
     pointer-events: auto;
     display: none;
+    min-width: 90%;
   }
 
   .testimonial-card.active {
