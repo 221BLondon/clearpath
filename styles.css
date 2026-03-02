@@ -118,7 +118,7 @@ nav a:hover {
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
+  transform: rotate(45deg) translate(11px, 8px);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -126,7 +126,7 @@ nav a:hover {
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+  transform: rotate(-45deg) translate(9px, -7px);
 }
 
 /* when scrolling */
@@ -225,7 +225,7 @@ nav.scrolled .hamburger span {
     width: 80%;
     max-width: 350px;
     height: 100vh;
-    background: red;
+    background: #fff;
     flex-direction: column;
     gap: 0;
     padding: 80px 20px 20px 20px;
@@ -233,6 +233,7 @@ nav.scrolled .hamburger span {
     z-index: 999;
     overflow-y: auto;
     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    margin: 0;
   }
 
   nav ul.active {
