@@ -106,27 +106,47 @@ nav a:hover {
   cursor: pointer;
   padding: 0;
   z-index: 1001;
+  width: 25px;
+  height: 30px;
+  justify-content: center;
+  gap: 5px;
 }
 
 .hamburger span {
   width: 25px;
   height: 3px;
   background: #222;
-  margin: 5px 0;
-  transition: 0.3s;
+  margin: 1px 0;
+  transition: 0.3s ease;
   border-radius: 2px;
+  display: block;
+  transform: rotate(0deg);
+  opacity: 1;
+  position: relative;
 }
 
+/* Hide span 3 by default */
+.hamburger span:nth-child(3) {
+  opacity: 0;
+  position: absolute;
+}
+
+/* On active - hide outer lines (1, 4), show and rotate middle lines (2, 3) */
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(11px, 8px);
-}
-
-.hamburger.active span:nth-child(2) {
   opacity: 0;
 }
 
+.hamburger.active span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(9px, -7px);
+  opacity: 1;
+  transform: rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(4) {
+  opacity: 0;
 }
 
 /* when scrolling */
@@ -215,6 +235,13 @@ nav.scrolled .hamburger span {
   .hamburger {
     display: flex;
     order: 2;
+    position: relative;
+    z-index: 1002;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
   }
 
   /* Side Panel Overlay */
@@ -245,7 +272,7 @@ nav.scrolled .hamburger span {
     white-space: normal;
     padding: 15px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    font-weight: 500;
+    font-weight: 600;
   }
 
   nav li:first-child {
@@ -258,14 +285,16 @@ nav.scrolled .hamburger span {
 
   nav a {
     font-size: 16px;
+    font-weight: 600;
     display: block;
     padding: 8px 10px;
     border-radius: 8px;
     transition: background 0.2s ease;
+    color: #1c085d;
   }
 
   nav a:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.05);
   }
 
   nav.scrolled ul {
@@ -301,7 +330,7 @@ nav.scrolled .hamburger span {
   .hamburger span {
     width: 22px;
     height: 2.5px;
-    margin: 4px 0;
+    margin: 1px 0;
   }
 }
 
