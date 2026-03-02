@@ -218,6 +218,7 @@ nav.scrolled .hamburger span {
   }
 
   /* Side Panel Overlay */
+  
   nav ul {
     position: fixed;
     top: 0;
@@ -244,6 +245,7 @@ nav.scrolled .hamburger span {
     white-space: normal;
     padding: 15px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
   }
 
   nav li:first-child {
